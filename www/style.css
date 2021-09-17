@@ -1,0 +1,59 @@
+body {
+  background: #2e2b33;
+  text-align: center;
+  color: #ddd;
+}
+
+.floor {
+  display: inline-block;
+  margin: 50px auto;
+  width: 250px;
+  text-align: center;
+}
+
+span {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  margin: -.4rem .2rem;
+  cursor: pointer;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+span.yellow {
+  background: lightgoldenrodyellow;
+}
+span.black {
+  background: #111;
+}
+
+span.red {
+  background: tomato;
+}
+
+span.lightbrown {
+  background: tan;
+}
+
+span.brown {
+  background: saddlebrown;
+}
+
+span.blue {
+  background: cornflowerblue;
+}
+
+span.lightblue {
+  background: lightblue;
+}
+
+span.pink {
+  background: pink;
+}
+
+span.white {
+  background: #eee;
+}
