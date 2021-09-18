@@ -1,0 +1,23 @@
+
+html, body{
+  align-items: center;
+  background: #2e2b33;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  font-weight: bolder;
+  height: 100%;
+  justify-content: center;
+  line-height: 2rem;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100%;
+}
+
+a, a:hover{
+  text-decoration: none;
+  color: #ddd;
+}
