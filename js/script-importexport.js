@@ -6,6 +6,9 @@ document.querySelector('#btnSave').onclick = function () {
         output += " **" + f.firstElementChild.innerHTML + "**\n";
         let cpt = 0;
         f.querySelectorAll('span').forEach((s) => {
+            if (s.innerHTML == '?') {
+                output += '?';
+            }
             switch (s.className) {
                 case 'yellow':
                     output += 'Boss';
@@ -68,6 +71,10 @@ document.querySelector('#fileInput').onchange = function (file) {
                 } else {
                     let elt = lines[i].split(', ');
                     for (let e = 0; e < elt.length; e++) {
+                        if (elt[e].charAt(0) == '?' ) {
+                            floor.querySelectorAll('span')[curFloorCell++].innerHTML = '?';
+                            elt[e].slice(1);
+                        }
                         switch (elt[e]) {
                             case 'Boss':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'yellow';
