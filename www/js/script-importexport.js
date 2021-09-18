@@ -52,53 +52,56 @@ document.querySelector('#btnLoad').onclick = function () {
 }
 
 document.querySelector('#fileInput').onchange = function (file) {
-    let floor = null;
-    let curFloor = 0;
-    let curFloorCell = 0;
-    let fr = new FileReader();
-    fr.onload = function () {
-        let lines = fr.result.split('\n');
-        for (let i = 0; i < lines.length; i++) {
-            if (!floor) {
-                floor = document.querySelectorAll('.floor')[curFloor++];
-                curFloorCell = 0;
-            } else if (lines[i] == "") {
-                floor = null;
-            } else {
-                let elt = lines[i].split(', ');
-                for (let e = 0; e < elt.length; e++) {
-                    switch (elt[e]) {
-                        case 'Boss':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'yellow';
-                            break;
-                        case 'Wrizz':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'black';
-                            break;
-                        case 'Praetorian Guard':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'red';
-                            break;
-                        case 'Guard':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'lightbrown';
-                            break;
-                        case 'Roamer':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'brown';
-                            break;
-                        case 'Abandoned Wagon':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'blue';
-                            break;
-                        case 'Fountain of Vitality':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'lightblue';
-                            break;
-                        case 'Mystic':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'pink';
-                            break;
-                        case 'Start':
-                            floor.querySelectorAll('span')[curFloorCell++].className = 'white';
-                            break;
+    if (file.target.files[0]) {
+        let floor = null;
+        let curFloor = 0;
+        let curFloorCell = 0;
+        let fr = new FileReader();
+        fr.onload = function () {
+            let lines = fr.result.split('\n');
+            for (let i = 0; i < lines.length; i++) {
+                if (!floor) {
+                    floor = document.querySelectorAll('.floor')[curFloor++];
+                    curFloorCell = 0;
+                } else if (lines[i] == "") {
+                    floor = null;
+                } else {
+                    let elt = lines[i].split(', ');
+                    for (let e = 0; e < elt.length; e++) {
+                        switch (elt[e]) {
+                            case 'Boss':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'yellow';
+                                break;
+                            case 'Wrizz':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'black';
+                                break;
+                            case 'Praetorian Guard':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'red';
+                                break;
+                            case 'Guard':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'lightbrown';
+                                break;
+                            case 'Roamer':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'brown';
+                                break;
+                            case 'Abandoned Wagon':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'blue';
+                                break;
+                            case 'Fountain of Vitality':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'lightblue';
+                                break;
+                            case 'Mystic':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'pink';
+                                break;
+                            case 'Start':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'white';
+                                break;
+                        }
                     }
                 }
             }
+            document.querySelector('#fileInput').value = '';
         }
+        fr.readAsText(file.target.files[0]);
     }
-    fr.readAsText(file.target.files[0]);
 }
