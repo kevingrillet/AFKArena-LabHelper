@@ -54,9 +54,8 @@ function newClickHandeler(e) {
     switch (e.which) {
         case 1: // Left
         case 3: // Right
-            e.preventDefault();
+            e.preventDefault(); // Remove default Context Menu
             clicked = e.target;
-            console.log(clicked)
 
             const { clientX: mouseX, clientY: mouseY } = e;
 
@@ -78,7 +77,6 @@ function newClickHandeler(e) {
 }
 
 function toogleUnknow(e) {
-    console.log(e.innerHTML)
     if (e.innerHTML == '?' ) {
         e.innerHTML = '';
     } else {
