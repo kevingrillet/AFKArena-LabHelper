@@ -57,15 +57,15 @@ document.addEventListener("click", (e) => {
 function newClickHandeler(e) {
     e = e || window.event;
     switch (e.which) {
-        case 1: // Left
         case 3: // Right
+            e.preventDefault(); // Remove default Context Menu
+        case 1: // Left
             if (clicked != e.target) {
                 if (clicked) {
                     contextMenuFloor.classList.remove("visible");
                     contextMenuAllowedFactions?.classList.remove("visible");
                     contextMenuDismalLuck?.classList.remove("visible");
                 }
-                e.preventDefault(); // Remove default Context Menu
                 clicked = e.target;
 
                 if (clicked.parentElement.className == 'floor') {
