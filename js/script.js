@@ -1,9 +1,12 @@
-const contextMenu = document.getElementById("context-menu-floor");
+const contextMenuFloor = document.getElementById("context-menu-floor");
+const contextMenuAllowedFactions = document.getElementById("context-menu-allowedFactions");
+const contextMenuDismalLuck = document.getElementById("context-menu-dismalLuck");
 const scope = document.querySelector("html");
 
 var clicked;
+var contextMenu;
 
-const normalizePozition = (mouseX, mouseY) => {
+const normalizePozition = (mouseX, mouseY, context) => {
     // ? compute what is the mouse position relative to the container element (scope)
     let {
         left: scopeOffsetX,
@@ -18,10 +21,10 @@ const normalizePozition = (mouseX, mouseY) => {
 
     // ? check if the element will go out of bounds
     const outOfBoundsOnX =
-        scopeX + contextMenu.clientWidth > scope.clientWidth;
+        scopeX + context.clientWidth > scope.clientWidth;
 
     const outOfBoundsOnY =
-        scopeY + contextMenu.clientHeight > scope.clientHeight;
+        scopeY + context.clientHeight > scope.clientHeight;
 
     let normalizedX = mouseX;
     let normalizedY = mouseY;
@@ -29,13 +32,13 @@ const normalizePozition = (mouseX, mouseY) => {
     // ? normalize on X
     if (outOfBoundsOnX) {
         normalizedX =
-            scopeOffsetX + scope.clientWidth - contextMenu.clientWidth;
+            scopeOffsetX + scope.clientWidth - context.clientWidth;
     }
 
     // ? normalize on Y
     if (outOfBoundsOnY) {
         normalizedY =
-            scopeOffsetY + scope.clientHeight - contextMenu.clientHeight;
+            scopeOffsetY + scope.clientHeight - context.clientHeight;
     }
 
     return { normalizedX, normalizedY };
@@ -44,7 +47,9 @@ const normalizePozition = (mouseX, mouseY) => {
 document.addEventListener("click", (e) => {
     // ? close the menu if the user clicks outside of it
     if (clicked != e.target && e.target.offsetParent != contextMenu) {
-        contextMenu.classList.remove("visible");
+        contextMenuFloor.classList.remove("visible");
+        contextMenuAllowedFactions?.classList.remove("visible");
+        contextMenuDismalLuck?.classList.remove("visible");
         clicked = null;
     }
 });
@@ -54,21 +59,36 @@ function newClickHandeler(e) {
     switch (e.which) {
         case 1: // Left
         case 3: // Right
-            e.preventDefault(); // Remove default Context Menu
-            clicked = e.target;
+            if (clicked != e.target) {
+                if (clicked) {
+                    contextMenuFloor.classList.remove("visible");
+                    contextMenuAllowedFactions?.classList.remove("visible");
+                    contextMenuDismalLuck?.classList.remove("visible");
+                }
+                e.preventDefault(); // Remove default Context Menu
+                clicked = e.target;
 
-            const { clientX: mouseX, clientY: mouseY } = e;
+                if (clicked.parentElement.className == 'floor') {
+                    contextMenu = contextMenuFloor;
+                } else if (clicked.parentElement.parentElement.parentElement.className == 'allowedFactions') {
+                    contextMenu = contextMenuAllowedFactions;
+                } else if (clicked.parentElement.parentElement.parentElement.className == 'dismalLuck') {
+                    contextMenu = contextMenuDismalLuck;
+                }
 
-            const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY);
+                const { clientX: mouseX, clientY: mouseY } = e;
 
-            contextMenu.classList.remove("visible");
+                const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY, contextMenu);
 
-            contextMenu.style.top = `${normalizedY}px`;
-            contextMenu.style.left = `${normalizedX}px`;
+                contextMenu.classList.remove("visible");
 
-            setTimeout(() => {
-                contextMenu.classList.add("visible");
-            });
+                contextMenu.style.top = `${normalizedY}px`;
+                contextMenu.style.left = `${normalizedX}px`;
+
+                setTimeout(() => {
+                    contextMenu.classList.add("visible");
+                });
+            }
             break;
         case 2: // Midle
             toogleUnknow(e.target);
@@ -77,7 +97,7 @@ function newClickHandeler(e) {
 }
 
 function toogleUnknow(e) {
-    if (e.innerHTML == '?' ) {
+    if (e.innerHTML == '?') {
         e.innerHTML = '';
     } else {
         e.innerHTML = '?';
@@ -95,19 +115,44 @@ document.querySelectorAll(':scope .floor span').forEach((e) => {
     e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
 });
 
+document.querySelectorAll(':scope .allowedFactions img').forEach((e) => {
+    e.onclick = newClickHandeler; // Left click
+    e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
+});
+
+document.querySelectorAll(':scope .dismalLuck img').forEach((e) => {
+    e.onclick = newClickHandeler; // Left click
+    e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
+});
+
 document.querySelectorAll('.item').forEach((e) => {
     e.onclick = function (e) {
         let curElt;
-        if (e.target.tagName.toLowerCase() == "div") {
-            curElt = e.target.firstElementChild;
-        }else {
-            curElt = e.target;
-        }
-        clicked.className = curElt.className;
-        if (clicked.innerHTML == '?') {
-            clicked.innerHTML = '';
+        switch (contextMenu) {
+            case (contextMenuFloor):
+                if (e.target.tagName.toLowerCase() == "div") {
+                    curElt = e.target.firstElementChild;
+                } else {
+                    curElt = e.target;
+                }
+                clicked.className = curElt.className;
+                if (clicked.innerHTML == '?') {
+                    clicked.innerHTML = '';
+                }
+                break;
+            case (contextMenuAllowedFactions):
+            case (contextMenuDismalLuck):
+                if (e.target.tagName.toLowerCase() == "div") {
+                    curElt = e.target.firstElementChild;
+                } else {
+                    curElt = e.target;
+                }
+                clicked.src = curElt.src;
+                clicked.alt = curElt.alt;
+                break;
         }
         contextMenu.classList.remove("visible");
+        contextMenu = null;
         clicked = null;
     }
 });
