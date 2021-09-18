@@ -60,11 +60,11 @@ document.querySelector('#fileInput').onchange = function (file) {
         fr.onload = function () {
             let lines = fr.result.split('\n');
             for (let i = 0; i < lines.length; i++) {
-                if (!floor) {
+                if (lines[i] == "") {
+                    floor = null;
+                } else if (!floor) {
                     floor = document.querySelectorAll('.floor')[curFloor++];
                     curFloorCell = 0;
-                } else if (lines[i] == "") {
-                    floor = null;
                 } else {
                     let elt = lines[i].split(', ');
                     for (let e = 0; e < elt.length; e++) {
