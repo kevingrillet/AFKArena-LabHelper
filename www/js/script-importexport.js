@@ -11,7 +11,7 @@ document.querySelector('#btnSave').onclick = function () {
                     output += 'Boss';
                     break;
                 case 'black':
-                    output += 'Wrizz';
+                    output += 'Cave of Treasures (Wrizz)';
                     break;
                 case 'red':
                     output += 'Praetorian Guard';
@@ -20,7 +20,7 @@ document.querySelector('#btnSave').onclick = function () {
                     output += 'Guard';
                     break;
                 case 'brown':
-                    output += 'Roamer';
+                    output += 'Wandering Trader';
                     break;
                 case 'blue':
                     output += 'Abandoned Wagon';
@@ -72,7 +72,7 @@ document.querySelector('#fileInput').onchange = function (file) {
                             case 'Boss':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'yellow';
                                 break;
-                            case 'Wrizz':
+                            case 'Cave of Treasures (Wrizz)':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'black';
                                 break;
                             case 'Praetorian Guard':
@@ -81,7 +81,7 @@ document.querySelector('#fileInput').onchange = function (file) {
                             case 'Guard':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'lightbrown';
                                 break;
-                            case 'Roamer':
+                            case 'Wandering Trader':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'brown';
                                 break;
                             case 'Abandoned Wagon':

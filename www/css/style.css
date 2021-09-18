@@ -9,7 +9,7 @@ body {
 #context-menu {
   position: fixed;
   z-index: 10000;
-  width: 12rem;
+  width: 14rem;
   background: 	rgb( 27 , 26 , 26, .75);
   border-radius: .5rem;
   text-align: left;
@@ -97,13 +97,13 @@ span.blue {
 }
 
 span.lightblue {
-  background: lightblue;
+  background: LightSkyBlue;
   color: #111;
   text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
 span.pink {
-  background: pink;
+  background: hotpink;
   color: #111;
   text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
