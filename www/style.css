@@ -15,10 +15,12 @@ span {
   box-sizing: border-box;
   position: relative;
   display: inline-block;
+  cursor: pointer;
   width: 4rem;
   height: 4rem;
   margin: -.4rem .2rem;
-  cursor: pointer;
+  line-height: 4rem;
+  vertical-align: middle;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
