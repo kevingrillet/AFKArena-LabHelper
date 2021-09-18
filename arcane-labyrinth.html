@@ -38,9 +38,10 @@
     <div>
         <button id="btnLoad">Load</button><input id="fileInput" type="file" name="name" style="display: none;" />
         <button id="btnSave">Save</button>
+        <button id="btnExport" title="LabPath-ArcaneLabyrinth">Export as PNG</button>
     </div>
 
-    <div>
+    <div id="LabPath">
         <div class="legend">
             <h2>Legend</h2>
             <ul>
@@ -136,7 +137,10 @@
     <script src="./js/script.js"></script>
     <script src="./js/script-dragdrop.js"></script>
     <script src="./js/FileSaver.js"></script>
-    <script src="./js/script-importexport.js"></script>
+    <script src="./js/script-loadsave.js"></script>
+    <!--<script src="./js/html2canvas.min.js"></script>-->
+    <script src="./js/dom-to-image.js"></script>
+    <script src="./js/script-export.js"></script>
 </body>
 
 </html>
