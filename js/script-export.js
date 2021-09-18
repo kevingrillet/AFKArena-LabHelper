@@ -5,8 +5,6 @@ document.querySelector('#btnExport').onclick = function (e) {
     });
     */
 
-    console.log(e.target);
-
     domtoimage.toBlob(document.querySelector("#LabPath"), { bgcolor: '#2e2b33'})
         .then(function (blob) {
             saveAs(blob, e.target.title+'.png');
