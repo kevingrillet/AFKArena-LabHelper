@@ -41,8 +41,8 @@ body {
 
 .floor {
   display: inline-block;
-  margin: 50px auto;
-  width: 250px;
+  margin: 1rem auto;
+  width: 15rem;
   text-align: center;
 }
 
@@ -53,7 +53,7 @@ span {
   cursor: pointer;
   width: 4rem;
   height: 4rem;
-  margin: -.4rem .2rem;
+  margin: -.4rem .1rem;
   line-height: 4rem;
   font-size: 3rem;
   vertical-align: middle;
@@ -62,12 +62,12 @@ span {
 }
 
 span.yellow {
-  background: lightgoldenrodyellow;
+  background: #FFFF66;
   color: #111;
   text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 span.black {
-  background: #111;
+  background: dimgray;
   color: #eee;
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
@@ -85,7 +85,7 @@ span.lightbrown {
 }
 
 span.brown {
-  background: saddlebrown;
+  background: peru;
   color: #eee;
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
