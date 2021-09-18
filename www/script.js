@@ -84,6 +84,10 @@ function toogleUnknow(e) {
     }
 }
 
+function toogleAllFloor(e) {
+    e.target.parentElement.querySelectorAll('span').forEach((e) => toogleUnknow(e));
+}
+
 // Replace all clicks on span
 document.querySelectorAll(':scope .floor span').forEach((e) => {
     e.onclick = newClickHandeler; // Left click
@@ -107,3 +111,7 @@ document.querySelectorAll('.item').forEach((e) => {
         clicked = null;
     }
 });
+
+document.querySelectorAll(':scope .floor h2').forEach((e) => {
+    e.onclick = toogleAllFloor;
+})
