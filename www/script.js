@@ -35,6 +35,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // Drag & Drop!
+
+function swapElements(element1, element2) {
+    var clonedElement1 = element1.cloneNode(true);
+    var clonedElement2 = element2.cloneNode(true);
+
+    element1.parentNode.replaceChild(clonedElement2, element1);
+    element2.parentNode.replaceChild(clonedElement1, element2);
+}
+
 var dragged;
 document.addEventListener("drag", function (event) {
 }, false);
@@ -67,9 +76,8 @@ document.addEventListener("dragleave", function (event) {
 document.addEventListener("drop", function (event) {
     event.preventDefault();
     if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
+        dragged.style.opacity = "";
         event.target.style.background = "";
-        let tmpClass = dragged.className;
-        dragged.className = event.target.className;
-        event.target.className = tmpClass;
+        swapElements(dragged, event.target);
     }
 }, false);
