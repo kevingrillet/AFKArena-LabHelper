@@ -31,6 +31,10 @@ h1 {
   margin-bottom: .5rem;
 }
 
+img {
+  width: 3.5rem;
+}
+
 .floor h2 {
   margin-top: .5rem;
   cursor: pointer;
@@ -65,7 +69,38 @@ h1 {
   border-radius: inherit;
 }
 
-#context-menu {
+.constraints {
+  width: 14rem;
+  font-size: .9rem;
+  display: inline-block;
+  margin: .5rem auto;
+  width: 12rem;
+  transform: translateY(-30%);
+  margin-left: 2rem;
+}
+
+.dismalLuck {
+  margin-bottom: 4rem;
+}
+
+.dismalLuck ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.dismalLuck li {
+  display: inline;
+}
+
+.allowedFactions ul {
+  list-style-type: none;
+  padding-left: 0;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+#context-menu-floor, #context-menu-allowedFactions, #context-menu-dismalLuck {
   position: fixed;
   z-index: 10000;
   width: 14rem;
@@ -76,12 +111,12 @@ h1 {
   transform-origin: top left;
 }
 
-#context-menu.visible {
+#context-menu-floor.visible, #context-menu-allowedFactions.visible, #context-menu-dismalLuck.visible {
   transform: scale(1);
   transition: transform 200ms ease-in-out;
 }
 
-#context-menu .item {
+#context-menu-floor .item, #context-menu-allowedFactions .item, #context-menu-dismalLuck .item{
   padding: .5rem;
   font-size: .9rem;
   color: #eee;
@@ -89,13 +124,17 @@ h1 {
   border-radius: inherit;
 }
 
-#context-menu .item:hover {
+#context-menu-floor .item:hover, #context-menu-allowedFactions .item:hover, #context-menu-dismalLuck .item:hover {
   background: 	rgb( 27 , 26 , 26, .9);
 }
 
-#context-menu span, .legend span {
+#context-menu-floor span, .legend span {
   width: 2rem;
   height: 2rem;
+}
+
+#context-menu-allowedFactions img, #context-menu-dismalLuck img {
+  width: 2rem;
 }
 
 .floor {

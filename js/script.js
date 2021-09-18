@@ -1,4 +1,4 @@
-const contextMenu = document.getElementById("context-menu");
+const contextMenu = document.getElementById("context-menu-floor");
 const scope = document.querySelector("html");
 
 var clicked;
