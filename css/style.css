@@ -76,6 +76,10 @@ h2 {
   text-align: center;
 }
 
+div.floor:last-of-type {
+  border-left: 1px solid #111;
+}
+
 span {
   box-sizing: border-box;
   position: relative;
