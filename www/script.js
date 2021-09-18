@@ -1,83 +1,111 @@
-function toogleUnknow(e) {
-    console.log(e.innerHTML)
-    if (e.innerHTML == '?' ) {
-        e.innerHTML = '';
-        console.log('remove ?')
-    } else {
-        e.innerHTML = '?';
-        console.log('add ?')
+const contextMenu = document.getElementById("context-menu");
+const scope = document.querySelector("html");
+
+var clicked;
+
+const normalizePozition = (mouseX, mouseY) => {
+    // ? compute what is the mouse position relative to the container element (scope)
+    let {
+        left: scopeOffsetX,
+        top: scopeOffsetY,
+    } = scope.getBoundingClientRect();
+
+    scopeOffsetX = scopeOffsetX < 0 ? 0 : scopeOffsetX;
+    scopeOffsetY = scopeOffsetY < 0 ? 0 : scopeOffsetY;
+
+    const scopeX = mouseX - scopeOffsetX;
+    const scopeY = mouseY - scopeOffsetY;
+
+    // ? check if the element will go out of bounds
+    const outOfBoundsOnX =
+        scopeX + contextMenu.clientWidth > scope.clientWidth;
+
+    const outOfBoundsOnY =
+        scopeY + contextMenu.clientHeight > scope.clientHeight;
+
+    let normalizedX = mouseX;
+    let normalizedY = mouseY;
+
+    // ? normalize on X
+    if (outOfBoundsOnX) {
+        normalizedX =
+            scopeOffsetX + scope.clientWidth - contextMenu.clientWidth;
     }
-}
+
+    // ? normalize on Y
+    if (outOfBoundsOnY) {
+        normalizedY =
+            scopeOffsetY + scope.clientHeight - contextMenu.clientHeight;
+    }
+
+    return { normalizedX, normalizedY };
+};
+
+document.addEventListener("click", (e) => {
+    // ? close the menu if the user clicks outside of it
+    if (clicked != e.target && e.target.offsetParent != contextMenu) {
+        contextMenu.classList.remove("visible");
+        clicked = null;
+    }
+});
 
 function newClickHandeler(e) {
     e = e || window.event;
-    e.preventDefault(); // Remove the default Context menu
-    console.log(e.which + ' ' + e.type);
-    console.log(e.target);
-
     switch (e.which) {
         case 1: // Left
+        case 3: // Right
+            e.preventDefault();
+            clicked = e.target;
+            console.log(clicked)
+
+            const { clientX: mouseX, clientY: mouseY } = e;
+
+            const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY);
+
+            contextMenu.classList.remove("visible");
+
+            contextMenu.style.top = `${normalizedY}px`;
+            contextMenu.style.left = `${normalizedX}px`;
+
+            setTimeout(() => {
+                contextMenu.classList.add("visible");
+            });
             break;
         case 2: // Midle
             toogleUnknow(e.target);
             break;
-        case 3: // Right
-            break;
     }
 }
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    document.querySelectorAll('span').forEach((e)=>{
-        e.onclick = newClickHandeler; // Left click
-        e.onauxclick = newClickHandeler; // Midle click
-        e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
-    });
+function toogleUnknow(e) {
+    console.log(e.innerHTML)
+    if (e.innerHTML == '?' ) {
+        e.innerHTML = '';
+    } else {
+        e.innerHTML = '?';
+    }
+}
+
+// Replace all clicks on span
+document.querySelectorAll(':scope .floor span').forEach((e) => {
+    e.onclick = newClickHandeler; // Left click
+    e.onauxclick = newClickHandeler; // Midle click
+    e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
 });
 
-// Drag & Drop!
-
-function swapElements(element1, element2) {
-    var clonedElement1 = element1.cloneNode(true);
-    var clonedElement2 = element2.cloneNode(true);
-
-    element1.parentNode.replaceChild(clonedElement2, element1);
-    element2.parentNode.replaceChild(clonedElement1, element2);
-}
-
-var dragged;
-document.addEventListener("drag", function (event) {
-}, false);
-
-document.addEventListener("dragstart", function (event) {
-    dragged = event.target;
-    event.target.style.opacity = .5;
-}, false);
-
-document.addEventListener("dragend", function (event) {
-    event.target.style.opacity = "";
-}, false);
-
-document.addEventListener("dragover", function (event) {
-    event.preventDefault();
-}, false);
-
-document.addEventListener("dragenter", function (event) {
-    if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
-        event.target.style.background = "LimeGreen";
+document.querySelectorAll('.item').forEach((e) => {
+    e.onclick = function (e) {
+        let curElt;
+        if (e.target.tagName.toLowerCase() == "div") {
+            curElt = e.target.firstElementChild;
+        }else {
+            curElt = e.target;
+        }
+        clicked.className = curElt.className;
+        if (clicked.innerHTML == '?') {
+            clicked.innerHTML = '';
+        }
+        contextMenu.classList.remove("visible");
+        clicked = null;
     }
-}, false);
-
-document.addEventListener("dragleave", function (event) {
-    if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
-        event.target.style.background = "";
-    }
-}, false);
-
-document.addEventListener("drop", function (event) {
-    event.preventDefault();
-    if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
-        dragged.style.opacity = "";
-        event.target.style.background = "";
-        swapElements(dragged, event.target);
-    }
-}, false);
+});

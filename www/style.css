@@ -6,6 +6,30 @@ body {
   font-weight: bolder;
 }
 
+#context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 200px;
+  background: 	rgb( 27 , 26 , 26, .9);
+  border-radius: 5px;
+  text-align: left;
+  transform: scale(0);
+  transform-origin: top left;
+}
+
+#context-menu.visible {
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+#context-menu .item {
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #eee;
+  cursor: pointer;
+  border-radius: inherit;
+}
+
 .floor {
   display: inline-block;
   margin: 50px auto;
