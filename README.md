@@ -2,6 +2,8 @@
 
 Little UI to draw the labyrinth.
 
+Link: <https://kevingrillet.github.io/AFKArena-LabHelper/>
+
 ## Sources
 
 - [x] Hexagon: <https://codepen.io/aaronpinero/pen/RwNRNNV>
