@@ -33,6 +33,7 @@ h1 {
 
 h2 {
   margin-top: .5rem;
+  cursor: pointer;
 }
 
 #context-menu {
