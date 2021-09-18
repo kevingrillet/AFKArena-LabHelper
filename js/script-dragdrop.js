@@ -25,20 +25,26 @@ document.addEventListener("dragover", function (event) {
 }, false);
 
 document.addEventListener("dragenter", function (event) {
-    if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
+    if (event.target.tagName.toLowerCase() == "span"
+        && event.target.parentElement.className == "floor"
+        && event.target != dragged) {
         event.target.style.background = "LimeGreen";
     }
 }, false);
 
 document.addEventListener("dragleave", function (event) {
-    if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
+    if (event.target.tagName.toLowerCase() == "span"
+        && event.target.parentElement.className == "floor"
+        && event.target != dragged) {
         event.target.style.background = "";
     }
 }, false);
 
 document.addEventListener("drop", function (event) {
     event.preventDefault();
-    if (event.target.tagName.toLowerCase() == "span" && event.target != dragged) {
+    if (event.target.tagName.toLowerCase() == "span"
+        && event.target.parentElement.className == "floor"
+        && event.target != dragged) {
         dragged.style.opacity = "";
         event.target.style.background = "";
         swapElements(dragged, event.target);
