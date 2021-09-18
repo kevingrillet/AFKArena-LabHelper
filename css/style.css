@@ -31,9 +31,38 @@ h1 {
   margin-bottom: .5rem;
 }
 
-h2 {
+.floor h2 {
   margin-top: .5rem;
   cursor: pointer;
+}
+
+.legend {
+  width: 14rem;
+  text-align: left;
+  font-size: .9rem;
+  display: inline-block;
+  margin: .5rem auto;
+  width: 14rem;
+  border: 1px solid #222;
+  transform: translateY(-50%);
+  margin-right: 2rem;
+}
+
+.legend h2 {
+  text-align: center;
+}
+
+.legend ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.legend li {
+  padding: .5rem;
+  font-size: .9rem;
+  color: #eee;
+  cursor: pointer;
+  border-radius: inherit;
 }
 
 #context-menu {
@@ -64,7 +93,7 @@ h2 {
   background: 	rgb( 27 , 26 , 26, .9);
 }
 
-#context-menu span {
+#context-menu span, .legend span {
   width: 2rem;
   height: 2rem;
 }
