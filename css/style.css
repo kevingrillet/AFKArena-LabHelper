@@ -7,8 +7,8 @@ body {
 }
 
 a, a:hover{
-    text-decoration: none;
-    color: lightsteelblue;
+  text-decoration: none;
+  color: lightsteelblue;
 }
 
 button {
@@ -29,10 +29,15 @@ button:hover {
 
 h1 {
   margin-bottom: .5rem;
+  font-weight: bolder;
 }
 
 img {
   width: 3.5rem;
+}
+
+p {
+  font-weight: normal;
 }
 
 .floor h2 {
@@ -45,10 +50,13 @@ img {
   text-align: left;
   font-size: .9rem;
   display: inline-block;
+  position: relative;
   margin: .5rem auto;
+  margin-left: 1rem;
   width: 14rem;
   border: 1px solid #222;
-  transform: translateY(-50%);
+  /*transform: translateY(-50%);*/
+  bottom: 7rem;
   margin-right: 2rem;
 }
 
