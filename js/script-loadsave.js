@@ -20,10 +20,13 @@ document.querySelector('#btnSave').onclick = function (e) {
             }
             switch (s.className) {
                 case 'yellow':
-                    output += 'Boss';
+                    output += e.target.name == 'ArcaneLabyrinth' ? 'Boss' : 'Relic Guardian';
                     break;
                 case 'black':
                     output += 'Cave of Treasures (Wrizz)';
+                    break;
+                case 'purple':
+                    output += 'Witch\'s Den';
                     break;
                 case 'red':
                     output += 'Praetorian Guard';
@@ -39,6 +42,9 @@ document.querySelector('#btnSave').onclick = function (e) {
                     break;
                 case 'lightblue':
                     output += 'Fountain of Vitality';
+                    break;
+                case 'orange':
+                    output += 'Divine Fountain';
                     break;
                 case 'pink':
                     output += 'Mystic';
@@ -94,10 +100,14 @@ document.querySelector('#fileInput').onchange = function (file) {
                         }
                         switch (elt[e]) {
                             case 'Boss':
+                            case 'Relic Guardian':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'yellow';
                                 break;
                             case 'Cave of Treasures (Wrizz)':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'black';
+                                break;
+                            case 'Witch\'s Den':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'purple';
                                 break;
                             case 'Praetorian Guard':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'red';
@@ -114,6 +124,9 @@ document.querySelector('#fileInput').onchange = function (file) {
                                 break;
                             case 'Fountain of Vitality':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'lightblue';
+                                break;
+                            case 'Divine Fountain':
+                                floor.querySelectorAll('span')[curFloorCell++].className = 'orange';
                                 break;
                             case 'Mystic':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'pink';
