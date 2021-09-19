@@ -23,7 +23,7 @@ document.querySelector('#btnSave').onclick = function (e) {
                     output += 'Guard';
                     break;
                 case 'brown':
-                    output += 'Wandering Trader';
+                    output += 'The Roamer';
                     break;
                 case 'blue':
                     output += 'Abandoned Wagon';
@@ -96,6 +96,7 @@ document.querySelector('#fileInput').onchange = function (file) {
                             case 'Guard':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'lightbrown';
                                 break;
+                            case 'The Roamer':
                             case 'Wandering Trader':
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'brown';
                                 break;
