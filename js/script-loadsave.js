@@ -1,3 +1,12 @@
+function capitalizeTheFirstLetterOfEachWord(words) {
+    var separateWord = words.toLowerCase().split(' ');
+    for (var i = 0; i < separateWord.length; i++) {
+        separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+            separateWord[i].substring(1);
+    }
+    return separateWord.join(' ');
+}
+
 const newLineTiles = [1, 3, 6, 8, 11, 13, 16, 18, 21, 23, 24]
 
 document.querySelector('#btnSave').onclick = function (e) {
@@ -119,8 +128,9 @@ document.querySelector('#fileInput').onchange = function (file) {
                     curImage = 0;
                     for (i; i < lines.length; i++) {
                         if (lines[i] == '') { break; }
-                        document.querySelectorAll(':scope .dismalLuck img')[curImage].src = './images/factions/' + lines[i] + '.png';
-                        document.querySelectorAll(':scope .dismalLuck img')[curImage++].alt = lines[i];
+                        document.querySelectorAll(':scope .dismalLuck img')[curImage].src = './images/dismalMaze/' + lines[i] + '.png';
+                        document.querySelectorAll(':scope .dismalLuck img')[curImage].alt = lines[i];
+                        document.querySelectorAll(':scope .dismalLuck img')[curImage++].title = capitalizeTheFirstLetterOfEachWord(lines[i].replace('_', ' '));
                     }
 
                 } else if (lines[i].includes('Allowed Factions')) {

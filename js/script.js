@@ -108,23 +108,6 @@ function toogleAllFloor(e) {
     e.target.parentElement.querySelectorAll('span').forEach((e) => toogleUnknow(e));
 }
 
-// Replace all clicks on span
-document.querySelectorAll(':scope .floor span').forEach((e) => {
-    e.onclick = newClickHandeler; // Left click
-    e.onauxclick = newClickHandeler; // Midle click
-    e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
-});
-
-document.querySelectorAll(':scope .allowedFactions img').forEach((e) => {
-    e.onclick = newClickHandeler; // Left click
-    e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
-});
-
-document.querySelectorAll(':scope .dismalLuck img').forEach((e) => {
-    e.onclick = newClickHandeler; // Left click
-    e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
-});
-
 document.querySelectorAll('.item').forEach((e) => {
     e.onclick = function (e) {
         let curElt;
@@ -159,4 +142,39 @@ document.querySelectorAll('.item').forEach((e) => {
 
 document.querySelectorAll(':scope .floor h2').forEach((e) => {
     e.onclick = toogleAllFloor;
-})
+});
+
+// Replace all clicks on span
+function init() {
+    document.querySelectorAll(':scope .floor span').forEach((e) => {
+        e.onclick = newClickHandeler; // Left click
+        e.onauxclick = newClickHandeler; // Midle click
+        e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
+    });
+
+    document.querySelectorAll(':scope .allowedFactions img').forEach((e) => {
+        e.onclick = newClickHandeler; // Left click
+        e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
+    });
+
+    document.querySelectorAll(':scope .dismalLuck img').forEach((e) => {
+        e.onclick = newClickHandeler; // Left click
+        e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
+    });
+}
+
+init()
+
+// /!\ require to observe dom because it can break ...
+
+var callback = function (mutationsList) {
+    for (var mutation of mutationsList) {
+        if (mutation.type == 'childList') {
+            console.log('init');
+            init();
+        }
+    }
+};
+
+var observer = new MutationObserver(callback);
+observer.observe(document.querySelector('#LabPath'), { childList: true, subtree: true });

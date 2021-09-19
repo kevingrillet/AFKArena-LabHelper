@@ -133,7 +133,7 @@ p {
   border-radius: inherit;
 }
 
-#context-menu-floor .item:hover, #context-menu-allowedFactions .item:hover, #context-menu-dismalLuck .item:hover {
+#context-menu-floor .item:hover, #context-menu-allowedFactions .item:hover {
   background: 	rgb( 27 , 26 , 26, .9);
 }
 
@@ -144,6 +144,31 @@ p {
 
 #context-menu-allowedFactions img, #context-menu-dismalLuck img {
   width: 2rem;
+}
+
+#context-menu-dismalLuck {
+  width: 20rem;
+}
+
+#context-menu-dismalLuck img:hover {
+  opacity: .75;
+}
+
+#context-menu-dismalLuck ul {
+  list-style-type: none;
+  padding: 0;
+  margin: .5rem;
+  columns: 7;
+  -webkit-columns: 7;
+  -moz-columns: 7;
+}
+
+#context-menu-dismalLuck li {
+  display: inline;
+}
+
+#context-menu-dismalLuck div {
+  padding: 0 !important;
 }
 
 .floor {
