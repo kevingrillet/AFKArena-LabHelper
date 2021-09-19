@@ -1,4 +1,3 @@
-
 html, body{
   align-items: center;
   background: #2e2b33;
@@ -15,9 +14,19 @@ html, body{
   text-decoration: none;
   vertical-align: middle;
   width: 100%;
+  color: #ddd;
 }
 
 a, a:hover{
   text-decoration: none;
-  color: #ddd;
+  color: lightsteelblue;
+}
+
+h1 {
+  margin: 2rem 0;
+}
+
+img {
+  border-radius: 50%;
+  border: 2px solid #eee;
 }
