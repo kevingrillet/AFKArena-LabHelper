@@ -1,9 +1,9 @@
 const newLineTiles = [1, 3, 6, 8, 11, 13, 16, 18, 21, 23, 24]
 
-document.querySelector('#btnSave').onclick = function () {
-    let output = "";
+document.querySelector('#btnSave').onclick = function (e) {
+    let output = '';
     document.querySelectorAll('.floor').forEach((f) => {
-        output += " **" + f.firstElementChild.innerHTML + "**\n";
+        output += ' **' + f.firstElementChild.innerHTML + '**\n';
         let cpt = 0;
         f.querySelectorAll('span').forEach((s) => {
             if (s.innerHTML == '?') {
@@ -44,10 +44,17 @@ document.querySelector('#btnSave').onclick = function () {
                 output += ', ';
             }
         });
-        output += "\n";
+        output += '\n';
     });
-    let blob = new Blob([output], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, "arcane-labyrinth.txt");
+    document.querySelectorAll(':scope .constraints div').forEach((c) => {
+        output += ' **' + c.firstElementChild.innerHTML + '**\n';
+        c.querySelectorAll('img').forEach((i) => {
+            output += i.alt + '\n';
+        });
+        output += '\n';
+    });
+    let blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, e.target.name + '.txt');
 }
 
 document.querySelector('#btnLoad').onclick = function () {
@@ -57,21 +64,22 @@ document.querySelector('#btnLoad').onclick = function () {
 document.querySelector('#fileInput').onchange = function (file) {
     if (file.target.files[0]) {
         let floor = null;
+        let curImage = 0;
         let curFloor = 0;
         let curFloorCell = 0;
         let fr = new FileReader();
         fr.onload = function () {
             let lines = fr.result.split('\n');
             for (let i = 0; i < lines.length; i++) {
-                if (lines[i] == "") {
+                if (lines[i] == '') {
                     floor = null;
-                } else if (!floor) {
+                } else if (!floor && lines[i].includes('Floor')) {
                     floor = document.querySelectorAll('.floor')[curFloor++];
                     curFloorCell = 0;
-                } else {
+                } else if (floor) {
                     let elt = lines[i].split(', ');
                     for (let e = 0; e < elt.length; e++) {
-                        if (elt[e].charAt(0) == '?' ) {
+                        if (elt[e].charAt(0) == '?') {
                             floor.querySelectorAll('span')[curFloorCell++].innerHTML = '?';
                             elt[e].slice(1);
                         }
@@ -104,6 +112,23 @@ document.querySelector('#fileInput').onchange = function (file) {
                                 floor.querySelectorAll('span')[curFloorCell++].className = 'white';
                                 break;
                         }
+                    }
+                } else if (lines[i].includes('Dismal Luck')) {
+                    i++;
+                    curImage = 0;
+                    for (i; i < lines.length; i++) {
+                        if (lines[i] == '') { break; }
+                        document.querySelectorAll(':scope .dismalLuck img')[curImage].src = './images/factions/' + lines[i] + '.png';
+                        document.querySelectorAll(':scope .dismalLuck img')[curImage++].alt = lines[i];
+                    }
+
+                } else if (lines[i].includes('Allowed Factions')) {
+                    i++;
+                    curImage = 0;
+                    for (i; i < lines.length; i++) {
+                        if (lines[i] == '') { break; }
+                        document.querySelectorAll(':scope .allowedFactions img')[curImage].src = './images/factions/' + lines[i] + '.png';
+                        document.querySelectorAll(':scope .allowedFactions img')[curImage++].alt = lines[i];
                     }
                 }
             }
