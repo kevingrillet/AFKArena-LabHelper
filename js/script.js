@@ -1,7 +1,7 @@
-const contextMenuFloor = document.getElementById("context-menu-floor");
-const contextMenuAllowedFactions = document.getElementById("context-menu-allowedFactions");
-const contextMenuDismalLuck = document.getElementById("context-menu-dismalLuck");
-const scope = document.querySelector("html");
+const contextMenuFloor = document.getElementById('context-menu-floor');
+const contextMenuAllowedFactions = document.getElementById('context-menu-allowedFactions');
+const contextMenuDismalLuck = document.getElementById('context-menu-dismalLuck');
+const scope = document.querySelector('html');
 
 var clicked;
 var contextMenu;
@@ -44,12 +44,12 @@ const normalizePozition = (mouseX, mouseY, context) => {
     return { normalizedX, normalizedY };
 };
 
-document.addEventListener("click", (e) => {
+document.addEventListener('click', (e) => {
     // ? close the menu if the user clicks outside of it
     if (clicked != e.target && e.target.offsetParent != contextMenu) {
-        contextMenuFloor.classList.remove("visible");
-        contextMenuAllowedFactions?.classList.remove("visible");
-        contextMenuDismalLuck?.classList.remove("visible");
+        contextMenuFloor.classList.remove('visible');
+        contextMenuAllowedFactions?.classList.remove('visible');
+        contextMenuDismalLuck?.classList.remove('visible');
         clicked = null;
     }
 });
@@ -62,9 +62,9 @@ function newClickHandeler(e) {
         case 1: // Left
             if (clicked != e.target) {
                 if (clicked) {
-                    contextMenuFloor.classList.remove("visible");
-                    contextMenuAllowedFactions?.classList.remove("visible");
-                    contextMenuDismalLuck?.classList.remove("visible");
+                    contextMenuFloor.classList.remove('visible');
+                    contextMenuAllowedFactions?.classList.remove('visible');
+                    contextMenuDismalLuck?.classList.remove('visible');
                 }
                 clicked = e.target;
 
@@ -80,13 +80,13 @@ function newClickHandeler(e) {
 
                 const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY, contextMenu);
 
-                contextMenu.classList.remove("visible");
+                contextMenu.classList.remove('visible');
 
                 contextMenu.style.top = `${normalizedY}px`;
                 contextMenu.style.left = `${normalizedX}px`;
 
                 setTimeout(() => {
-                    contextMenu.classList.add("visible");
+                    contextMenu.classList.add('visible');
                 });
             }
             break;
@@ -130,7 +130,7 @@ document.querySelectorAll('.item').forEach((e) => {
         let curElt;
         switch (contextMenu) {
             case (contextMenuFloor):
-                if (e.target.tagName.toLowerCase() == "div") {
+                if (e.target.tagName.toLowerCase() == 'div') {
                     curElt = e.target.firstElementChild;
                 } else {
                     curElt = e.target;
@@ -142,7 +142,7 @@ document.querySelectorAll('.item').forEach((e) => {
                 break;
             case (contextMenuAllowedFactions):
             case (contextMenuDismalLuck):
-                if (e.target.tagName.toLowerCase() == "div") {
+                if (e.target.tagName.toLowerCase() == 'div') {
                     curElt = e.target.firstElementChild;
                 } else {
                     curElt = e.target;
@@ -151,7 +151,7 @@ document.querySelectorAll('.item').forEach((e) => {
                 clicked.alt = curElt.alt;
                 break;
         }
-        contextMenu.classList.remove("visible");
+        contextMenu.classList.remove('visible');
         contextMenu = null;
         clicked = null;
     }

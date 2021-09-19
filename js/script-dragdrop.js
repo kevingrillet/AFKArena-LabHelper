@@ -28,9 +28,7 @@ document.addEventListener('dragenter', function (event) {
     if (event.target.tagName.toLowerCase() == 'span'
         && event.target.parentElement.className == 'floor'
         && event.target != dragged) {
-
         event.target.style.opacity = .8;
-        //event.target.style.background = 'LimeGreen';
     }
 }, false);
 
