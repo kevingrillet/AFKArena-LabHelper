@@ -1,15 +1,30 @@
-# AFKArena - LabHelper
+<!-- Header -->
+<div align="center">
+   <a href="https://github.com/kyechan99/capsule-render">
+      <img align="center" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=AFK%20Arena&fontAlign=30&fontAlignY=30&fontSize=80&desc=Lab%20Helper&descAlign=70&descAlignY=55&descSize=70" />
+   </a>
+
+   <!-- Badges -->
+   <a alt="Discord" href="https://discord.gg/Fq2cfqjp8D"><img src="https://img.shields.io/discord/859136061049143307?label=Discord&logo=discord"></img></a>
+   <a alt="Language" href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/Language-Shell-yellow.svg"></img></a>
+   </br>
+</div>
+
+## Description
 
 Little UI to draw the labyrinth.
 
+## Quickstart
+
 Link: <https://kevingrillet.github.io/AFKArena-LabHelper/>
 
-## Sources
+## Want to contribute?
 
-- [x] Hexagon: <https://codepen.io/aaronpinero/pen/RwNRNNV>
-- [x] Hexagonal grid: <https://codepen.io/yy/pen/FCoEk>
-- [x] Middle click to tag cell unknown? <https://codepen.io/santushDN/pen/vVrwYo>
-- [x] Drag & Drop: <https://www.w3schools.com/html/html5_draganddrop.asp>
-- [x] Drag & Drop Swap Items: <https://developer.mozilla.org/fr/docs/Web/API/Document/drag_event>
-- [x] Custom right-click menu to change item: <https://itnext.io/how-to-create-a-custom-right-click-menu-with-javascript-9c368bb58724>
-- [x] Text output? Need to see where it will be used :) <https://github.com/eligrey/FileSaver.js>
+Please send us your map if it's not already published! Link to [Reddit](<https://www.reddit.com/r/Lab_path/comments/fj1g4y/official_rlab_path_discord_server/>)
+
+<!-- Footer -->
+<div align="center">
+   <a href="https://github.com/kyechan99/capsule-render">
+      <img align="center" src="https://capsule-render.vercel.app/api?section=footer&type=waving&color=gradient&height=100" />
+   </a>
+</div>
