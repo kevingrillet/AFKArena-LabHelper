@@ -262,3 +262,21 @@ span.white {
   color: #111;
   text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
+
+#LabPath {
+    position: relative;
+}
+
+.tags {
+  position: absolute;
+  top: .1rem;
+  right: .1rem;
+  display: block;
+  text-align: left;
+}
+
+.tags img {
+  max-width: 2rem;
+  vertical-align: middle;
+  fill: white;
+}
