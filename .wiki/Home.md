@@ -3,11 +3,6 @@
    <a href="https://github.com/kyechan99/capsule-render">
       <img align="center" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=AFK%20Arena&fontAlign=30&fontAlignY=30&fontSize=80&desc=Lab%20Helper&descAlign=70&descAlignY=55&descSize=70" />
    </a>
-
-   <!-- Badges -->
-   <a alt="Discord" href="https://discord.gg/Fq2cfqjp8D"><img src="https://img.shields.io/discord/859136061049143307?label=Discord&logo=discord"></img></a>
-   <a alt="Language" href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/Language-Shell-yellow.svg"></img></a>
-   </br>
 </div>
 
 ## Description
