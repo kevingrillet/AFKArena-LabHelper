@@ -1,0 +1,26 @@
+# Sources
+
+## Code
+
+- Hexagon: <https://codepen.io/aaronpinero/pen/RwNRNNV>
+- Hexagonal grid: <https://codepen.io/yy/pen/FCoEk>
+- Middle click to tag cell unknown? <https://codepen.io/santushDN/pen/vVrwYo>
+- Drag & Drop: <https://www.w3schools.com/html/html5_draganddrop.asp>
+- Drag & Drop Swap Items: <https://developer.mozilla.org/fr/docs/Web/API/Document/drag_event>
+- Custom right-click menu to change item: <https://itnext.io/how-to-create-a-custom-right-click-menu-with-javascript-9c368bb58724>
+- Text output? Need to see where it will be used :) <https://github.com/eligrey/FileSaver.js>
+
+## Icons & Logo
+
+- <div>Icônes conçues par <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/fr/" title="Flaticon">www.flaticon.com</a></div>
+  - <https://www.flaticon.com/free-icon/reddit_889130>
+  - <https://www.flaticon.com/fr/icone-gratuite/logo-reddit_52053>
+  - <https://www.flaticon.com/fr/icone-gratuite/github_733609>
+
+<hr>
+
+<div align="center">
+<a href="https://github.com/zebscripts/AFK-Daily/wiki/Get-Started">Previous page</a>
+|
+<a href="https://github.com/zebscripts/AFK-Daily/wiki/Contribute">Next page</a>
+</div>
