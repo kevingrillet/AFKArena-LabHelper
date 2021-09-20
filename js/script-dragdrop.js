@@ -8,63 +8,88 @@ function swapElements(element1, element2) {
     element2.parentNode.replaceChild(clonedElement1, element2);
 }
 
-document.addEventListener('drag', function (event) {
-}, false);
+function pElt3(element) {
+    return element.parentElement.parentElement.parentElement;
+}
 
-document.addEventListener('dragstart', function (event) {
+document.addEventListener("dragstart", function (event) {
     dragged = event.target;
-    event.target.style.opacity = .5;
+    event.target.style.opacity = 0.5;
 }, false);
 
-document.addEventListener('dragend', function (event) {
-    event.target.style.opacity = '';
+document.addEventListener("dragend", function (event) {
+    event.target.style.opacity = "";
 }, false);
 
-document.addEventListener('dragover', function (event) {
+document.addEventListener("dragover", function (event) {
     event.preventDefault();
 }, false);
 
-document.addEventListener('dragenter', function (event) {
-    if (event.target != dragged
-        && (dragged.tagName.toLowerCase() == 'span'
-            && event.target.tagName.toLowerCase() == 'span'
-            && event.target.parentElement.className == 'floor')
-        || (dragged.tagName.toLowerCase() == 'img'
-            && event.target.tagName.toLowerCase() == 'img'
-            && dragged.parentElement.parentElement.parentElement.className == event.target.parentElement.parentElement.parentElement.className
+document.addEventListener("dragenter", function (event) {
+    if (
+        event.target !== dragged
+        &&
+        (
+            (
+                dragged.tagName.toLowerCase() === "span"
+                && event.target.tagName.toLowerCase() === "span"
+                && event.target.parentElement.className === "floor"
+            )
+            ||
+            (
+                dragged.tagName.toLowerCase() === "img"
+                && event.target.tagName.toLowerCase() === "img"
+                && pElt3(dragged).className === pElt3(event.target).className
+            )
         )
     ) {
-        event.target.style.opacity = .8;
+        event.target.style.opacity = 0.8;
     }
 }, false);
 
-document.addEventListener('dragleave', function (event) {
-    if (event.target != dragged
-        && (dragged.tagName.toLowerCase() == 'span'
-            && event.target.tagName.toLowerCase() == 'span'
-            && event.target.parentElement.className == 'floor')
-        || (dragged.tagName.toLowerCase() == 'img'
-            && event.target.tagName.toLowerCase() == 'img'
-            && dragged.parentElement.parentElement.parentElement.className == event.target.parentElement.parentElement.parentElement.className
+document.addEventListener("dragleave", function (event) {
+    if (
+        event.target !== dragged
+        &&
+        (
+            (
+                dragged.tagName.toLowerCase() === "span"
+                && event.target.tagName.toLowerCase() === "span"
+                && event.target.parentElement.className === "floor"
+            )
+            ||
+            (
+                dragged.tagName.toLowerCase() === "img"
+                && event.target.tagName.toLowerCase() === "img"
+                && pElt3(dragged).className === pElt3(event.target).className
+            )
         )
     ) {
-        event.target.style.opacity = '';
+        event.target.style.opacity = "";
     }
 }, false);
 
-document.addEventListener('drop', function (event) {
+document.addEventListener("drop", function (event) {
     event.preventDefault();
-    if (event.target != dragged
-        && (dragged.tagName.toLowerCase() == 'span'
-            && event.target.tagName.toLowerCase() == 'span'
-            && event.target.parentElement.className == 'floor')
-        || (dragged.tagName.toLowerCase() == 'img'
-            && event.target.tagName.toLowerCase() == 'img'
-            && dragged.parentElement.parentElement.parentElement.className == event.target.parentElement.parentElement.parentElement.className
+    if (
+        event.target !== dragged
+        &&
+        (
+            (
+                dragged.tagName.toLowerCase() === "span"
+                && event.target.tagName.toLowerCase() === "span"
+                && event.target.parentElement.className === "floor"
+            )
+            ||
+            (
+                dragged.tagName.toLowerCase() === "img"
+                && event.target.tagName.toLowerCase() === "img"
+                && pElt3(dragged).className === pElt3(event.target).className
+            )
         )
     ) {
-        dragged.style.opacity = '';
-        event.target.style.opacity = '';
+        dragged.style.opacity = "";
+        event.target.style.opacity = "";
         swapElements(dragged, event.target);
     }
 }, false);

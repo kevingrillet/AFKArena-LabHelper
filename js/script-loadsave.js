@@ -1,162 +1,166 @@
 function capitalizeTheFirstLetterOfEachWord(words) {
-    var separateWord = words.toLowerCase().split(' ');
-    for (var i = 0; i < separateWord.length; i++) {
+    var separateWord = words.toLowerCase().split(" ");
+    for (let i = 0; i < separateWord.length; i++) {
         separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
             separateWord[i].substring(1);
     }
-    return separateWord.join(' ');
+    return separateWord.join(" ");
 }
 
 const newLineTiles = [1, 3, 6, 8, 11, 13, 16, 18, 21, 23, 24]
 
-document.querySelector('#btnSave').onclick = function (e) {
-    let output = '';
-    document.querySelectorAll('.floor').forEach((f) => {
-        output += ' **' + f.firstElementChild.innerHTML + '**\n';
+document.querySelector("#btnSave").onclick = (e) => {
+    let output = "";
+    document.querySelectorAll(".floor").forEach((f) => {
+        output += " **" + f.firstElementChild.innerHTML + "**\n";
         let cpt = 0;
-        f.querySelectorAll('span').forEach((s) => {
-            if (s.innerHTML == '?') {
-                output += '?';
+        f.querySelectorAll("span").forEach((s) => {
+            if (s.innerHTML == "?") {
+                output += "?";
             }
             switch (s.className) {
-                case 'yellow':
-                    output += e.target.name == 'ArcaneLabyrinth' ? 'Boss' : 'Relic Guardian';
+                case "yellow":
+                    output += e.target.name == "ArcaneLabyrinth" ? "Boss" : "Relic Guardian";
                     break;
-                case 'black':
-                    output += 'Cave of Treasures (Wrizz)';
+                case "black":
+                    output += "Cave of Treasures (Wrizz)";
                     break;
-                case 'purple':
-                    output += 'Witch\'s Den';
+                case "purple":
+                    output += "Witch's Den";
                     break;
-                case 'red':
-                    output += 'Praetorian Guard';
+                case "red":
+                    output += "Praetorian Guard";
                     break;
-                case 'lightbrown':
-                    output += 'Guard';
+                case "lightbrown":
+                    output += "Guard";
                     break;
-                case 'brown':
-                    output += 'The Roamer';
+                case "brown":
+                    output += "The Roamer";
                     break;
-                case 'blue':
-                    output += 'Abandoned Wagon';
+                case "blue":
+                    output += "Abandoned Wagon";
                     break;
-                case 'lightblue':
-                    output += 'Fountain of Vitality';
+                case "lightblue":
+                    output += "Fountain of Vitality";
                     break;
-                case 'orange':
-                    output += 'Divine Fountain';
+                case "orange":
+                    output += "Divine Fountain";
                     break;
-                case 'pink':
-                    output += 'Mystic';
+                case "pink":
+                    output += "Mystic";
                     break;
-                case 'white':
-                    output += 'Start';
+                case "white":
+                    output += "Start";
                     break;
             }
             if (newLineTiles.includes(++cpt)) {
-                output += '\n';
+                output += "\n";
             } else {
-                output += ', ';
+                output += ", ";
             }
         });
-        output += '\n';
+        output += "\n";
     });
-    document.querySelectorAll(':scope .constraints div').forEach((c) => {
-        output += ' **' + c.firstElementChild.innerHTML + '**\n';
-        c.querySelectorAll('img').forEach((i) => {
-            output += i.alt + '\n';
+    document.querySelectorAll(":scope .constraints div").forEach((c) => {
+        output += " **" + c.firstElementChild.innerHTML + "**\n";
+        c.querySelectorAll("img").forEach((i) => {
+            output += i.alt + "\n";
         });
-        output += '\n';
+        output += "\n";
     });
-    let blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
-    saveAs(blob, e.target.name + '.txt');
+    let blob = new Blob([output], { type: "text/plain;charset=utf-8" });
+    saveAs(blob, e.target.name + ".txt");
 }
 
-document.querySelector('#btnLoad').onclick = function () {
-    document.querySelector('#fileInput').click();
+document.querySelector("#btnLoad").onclick = function () {
+    document.querySelector("#fileInput").click();
 }
 
-document.querySelector('#fileInput').onchange = function (file) {
+document.querySelector("#fileInput").onchange = function (file) {
     if (file.target.files[0]) {
         let floor = null;
         let curImage = 0;
         let curFloor = 0;
         let curFloorCell = 0;
+        let curTile = null;
         let fr = new FileReader();
         fr.onload = function () {
-            let lines = fr.result.split('\n');
+            let lines = fr.result.split("\n");
             for (let i = 0; i < lines.length; i++) {
-                if (lines[i] == '') {
+                if (lines[i] == "") {
                     floor = null;
-                } else if (!floor && lines[i].includes('Floor')) {
-                    floor = document.querySelectorAll('.floor')[curFloor++];
+                } else if (!floor && lines[i].includes("Floor")) {
+                    floor = document.querySelectorAll(".floor")[curFloor++];
                     curFloorCell = 0;
                 } else if (floor) {
-                    let elt = lines[i].split(', ');
+                    let elt = lines[i].split(", ");
                     for (let e = 0; e < elt.length; e++) {
-                        if (elt[e].charAt(0) == '?') {
-                            floor.querySelectorAll('span')[curFloorCell++].innerHTML = '?';
+                        curTile = floor.querySelectorAll("span")[curFloorCell++];
+                        if (elt[e].charAt(0) == "?") {
+                            curTile.innerHTML = "?";
                             elt[e].slice(1);
                         }
                         switch (elt[e]) {
-                            case 'Boss':
-                            case 'Relic Guardian':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'yellow';
+                            case "Boss":
+                            case "Relic Guardian":
+                                curTile.className = "yellow";
                                 break;
-                            case 'Cave of Treasures (Wrizz)':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'black';
+                            case "Cave of Treasures (Wrizz)":
+                                curTile.className = "black";
                                 break;
-                            case 'Witch\'s Den':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'purple';
+                            case "Witch's Den":
+                                curTile.className = "purple";
                                 break;
-                            case 'Praetorian Guard':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'red';
+                            case "Praetorian Guard":
+                                curTile.className = "red";
                                 break;
-                            case 'Guard':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'lightbrown';
+                            case "Guard":
+                                curTile.className = "lightbrown";
                                 break;
-                            case 'The Roamer':
-                            case 'Wandering Trader':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'brown';
+                            case "The Roamer":
+                            case "Wandering Trader":
+                                curTile.className = "brown";
                                 break;
-                            case 'Abandoned Wagon':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'blue';
+                            case "Abandoned Wagon":
+                                curTile.className = "blue";
                                 break;
-                            case 'Fountain of Vitality':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'lightblue';
+                            case "Fountain of Vitality":
+                                curTile.className = "lightblue";
                                 break;
-                            case 'Divine Fountain':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'orange';
+                            case "Divine Fountain":
+                                curTile.className = "orange";
                                 break;
-                            case 'Mystic':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'pink';
+                            case "Mystic":
+                                curTile.className = "pink";
                                 break;
-                            case 'Start':
-                                floor.querySelectorAll('span')[curFloorCell++].className = 'white';
+                            case "Start":
+                                curTile.className = "white";
                                 break;
                         }
                     }
-                } else if (lines[i].includes('Dismal Luck')) {
+                } else if (lines[i].includes("Dismal Luck")) {
                     i++;
                     curImage = 0;
                     for (i; i < lines.length; i++) {
-                        if (lines[i] == '') { break; }
-                        document.querySelectorAll(':scope .dismalLuck img')[curImage].src = './images/dismalMaze/' + lines[i] + '.png';
-                        document.querySelectorAll(':scope .dismalLuck img')[curImage].alt = lines[i];
-                        document.querySelectorAll(':scope .dismalLuck img')[curImage++].title = capitalizeTheFirstLetterOfEachWord(lines[i].replace('_', ' '));
+                        if (lines[i] == "") { break; }
+                        curTile = document.querySelectorAll(":scope .dismalLuck img")[curImage++];
+                        curTile.src = "./images/dismalMaze/" + lines[i] + ".png";
+                        curTile.alt = lines[i];
+                        curTile.title = capitalizeTheFirstLetterOfEachWord(lines[i].replace("_", " "));
                     }
 
-                } else if (lines[i].includes('Allowed Factions')) {
+                } else if (lines[i].includes("Allowed Factions")) {
                     i++;
                     curImage = 0;
                     for (i; i < lines.length; i++) {
-                        if (lines[i] == '') { break; }
-                        document.querySelectorAll(':scope .allowedFactions img')[curImage].src = './images/factions/' + lines[i] + '.png';
-                        document.querySelectorAll(':scope .allowedFactions img')[curImage++].alt = lines[i];
+                        if (lines[i] == "") { break; }
+                        curTile = document.querySelectorAll(":scope .allowedFactions img")[curImage++];
+                        curTile.src = "./images/factions/" + lines[i] + ".png";
+                        curTile.alt = lines[i];
                     }
                 }
             }
-            document.querySelector('#fileInput').value = '';
+            document.querySelector("#fileInput").value = "";
         }
         fr.readAsText(file.target.files[0]);
     }

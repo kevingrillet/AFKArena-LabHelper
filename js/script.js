@@ -1,7 +1,7 @@
-const contextMenuFloor = document.getElementById('context-menu-floor');
-const contextMenuAllowedFactions = document.getElementById('context-menu-allowedFactions');
-const contextMenuDismalLuck = document.getElementById('context-menu-dismalLuck');
-const scope = document.querySelector('html');
+const contextMenuFloor = document.getElementById("context-menu-floor");
+const contextMenuAllowedFactions = document.getElementById("context-menu-allowedFactions");
+const contextMenuDismalLuck = document.getElementById("context-menu-dismalLuck");
+const scope = document.querySelector("html");
 
 var clicked;
 var contextMenu;
@@ -44,12 +44,12 @@ const normalizePozition = (mouseX, mouseY, context) => {
     return { normalizedX, normalizedY };
 };
 
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
     // ? close the menu if the user clicks outside of it
     if (clicked != e.target && e.target.offsetParent != contextMenu) {
-        contextMenuFloor.classList.remove('visible');
-        contextMenuAllowedFactions?.classList.remove('visible');
-        contextMenuDismalLuck?.classList.remove('visible');
+        contextMenuFloor.classList.remove("visible");
+        contextMenuAllowedFactions?.classList.remove("visible");
+        contextMenuDismalLuck?.classList.remove("visible");
         clicked = null;
     }
 });
@@ -62,17 +62,17 @@ function newClickHandeler(e) {
         case 1: // Left
             if (clicked != e.target) {
                 if (clicked) {
-                    contextMenuFloor.classList.remove('visible');
-                    contextMenuAllowedFactions?.classList.remove('visible');
-                    contextMenuDismalLuck?.classList.remove('visible');
+                    contextMenuFloor.classList.remove("visible");
+                    contextMenuAllowedFactions?.classList.remove("visible");
+                    contextMenuDismalLuck?.classList.remove("visible");
                 }
                 clicked = e.target;
 
-                if (clicked.parentElement.className == 'floor') {
+                if (clicked.parentElement.className == "floor") {
                     contextMenu = contextMenuFloor;
-                } else if (clicked.parentElement.parentElement.parentElement.className == 'allowedFactions') {
+                } else if (clicked.parentElement.parentElement.parentElement.className == "allowedFactions") {
                     contextMenu = contextMenuAllowedFactions;
-                } else if (clicked.parentElement.parentElement.parentElement.className == 'dismalLuck') {
+                } else if (clicked.parentElement.parentElement.parentElement.className == "dismalLuck") {
                     contextMenu = contextMenuDismalLuck;
                 }
 
@@ -80,13 +80,13 @@ function newClickHandeler(e) {
 
                 const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY, contextMenu);
 
-                contextMenu.classList.remove('visible');
+                contextMenu.classList.remove("visible");
 
                 contextMenu.style.top = `${normalizedY}px`;
                 contextMenu.style.left = `${normalizedX}px`;
 
                 setTimeout(() => {
-                    contextMenu.classList.add('visible');
+                    contextMenu.classList.add("visible");
                 });
             }
             break;
@@ -97,35 +97,35 @@ function newClickHandeler(e) {
 }
 
 function toogleUnknow(e) {
-    if (e.innerHTML == '?') {
-        e.innerHTML = '';
+    if (e.innerHTML == "?") {
+        e.innerHTML = "";
     } else {
-        e.innerHTML = '?';
+        e.innerHTML = "?";
     }
 }
 
 function toogleAllFloor(e) {
-    e.target.parentElement.querySelectorAll('span').forEach((e) => toogleUnknow(e));
+    e.target.parentElement.querySelectorAll("span").forEach((e) => toogleUnknow(e));
 }
 
-document.querySelectorAll('.item').forEach((e) => {
+document.querySelectorAll(".item").forEach((e) => {
     e.onclick = function (e) {
         let curElt;
         switch (contextMenu) {
             case (contextMenuFloor):
-                if (e.target.tagName.toLowerCase() == 'div') {
+                if (e.target.tagName.toLowerCase() == "div") {
                     curElt = e.target.firstElementChild;
                 } else {
                     curElt = e.target;
                 }
                 clicked.className = curElt.className;
-                if (clicked.innerHTML == '?') {
-                    clicked.innerHTML = '';
+                if (clicked.innerHTML == "?") {
+                    clicked.innerHTML = "";
                 }
                 break;
             case (contextMenuAllowedFactions):
             case (contextMenuDismalLuck):
-                if (e.target.tagName.toLowerCase() == 'div') {
+                if (e.target.tagName.toLowerCase() == "div") {
                     curElt = e.target.firstElementChild;
                 } else {
                     curElt = e.target;
@@ -134,30 +134,30 @@ document.querySelectorAll('.item').forEach((e) => {
                 clicked.alt = curElt.alt;
                 break;
         }
-        contextMenu.classList.remove('visible');
+        contextMenu.classList.remove("visible");
         contextMenu = null;
         clicked = null;
     }
 });
 
-document.querySelectorAll(':scope .floor h2').forEach((e) => {
+document.querySelectorAll(":scope .floor h2").forEach((e) => {
     e.onclick = toogleAllFloor;
 });
 
 // Replace all clicks on span
 function init() {
-    document.querySelectorAll(':scope .floor span').forEach((e) => {
+    document.querySelectorAll(":scope .floor span").forEach((e) => {
         e.onclick = newClickHandeler; // Left click
         e.onauxclick = newClickHandeler; // Midle click
         e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
     });
 
-    document.querySelectorAll(':scope .allowedFactions img').forEach((e) => {
+    document.querySelectorAll(":scope .allowedFactions img").forEach((e) => {
         e.onclick = newClickHandeler; // Left click
         e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
     });
 
-    document.querySelectorAll(':scope .dismalLuck img').forEach((e) => {
+    document.querySelectorAll(":scope .dismalLuck img").forEach((e) => {
         e.onclick = newClickHandeler; // Left click
         e.oncontextmenu = newClickHandeler; // Right click -> Context Menu
     });
@@ -169,12 +169,11 @@ init()
 
 var callback = function (mutationsList) {
     for (var mutation of mutationsList) {
-        if (mutation.type == 'childList') {
-            console.log('init');
+        if (mutation.type == "childList") {
             init();
         }
     }
 };
 
 var observer = new MutationObserver(callback);
-observer.observe(document.querySelector('#LabPath'), { childList: true, subtree: true });
+observer.observe(document.querySelector("#LabPath"), { childList: true, subtree: true });
