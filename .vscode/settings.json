@@ -36,7 +36,12 @@
             "icon": "alert",
             "iconColour": "yellow"
         }
-    }
+    },
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true
     // Extension - Guides > https://marketplace.visualstudio.com/items?itemName=spywhere.guides
     // Extension - Trailing Spaces > https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
 }

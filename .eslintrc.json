@@ -1,0 +1,21 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+    },
+    "globals": {
+        "saveAs": true,
+        "domtoimage": true
+    },
+    "ignorePatterns": [
+        "dom-to-image.js",
+        "FileSaver.js",
+        "html2canvas.min.js"
+    ]
+}

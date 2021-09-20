@@ -59,6 +59,7 @@ function newClickHandeler(e) {
     switch (e.which) {
         case 3: // Right
             e.preventDefault(); // Remove default Context Menu
+            // falls through
         case 1: // Left
             if (clicked != e.target) {
                 if (clicked) {
