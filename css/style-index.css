@@ -4,7 +4,7 @@ html, body{
   display: flex;
   flex-direction: column;
   font-family: Roboto, 'Courier New', Courier, monospace;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   height: 100%;
   justify-content: center;
@@ -29,4 +29,5 @@ h1 {
 img {
   border-radius: 50%;
   border: 2px solid #eee;
+  max-width: 10rem;
 }
