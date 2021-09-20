@@ -9,7 +9,7 @@ Mouse middle click on a tile to say that you don't know. Click on floor tile to 
 <hr>
 
 <div align="center">
-<a href="https://github.com/zebscripts/AFK-Daily/wiki/Home">Previous page</a>
+<a href="https://github.com/kevingrillet/AFKArena-LabHelper/wiki/Home">Previous page</a>
 |
-<a href="https://github.com/zebscripts/AFK-Daily/wiki/Sources">Next page</a>
+<a href="https://github.com/kevingrillet/AFKArena-LabHelper/wiki/Sources">Next page</a>
 </div>

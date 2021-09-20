@@ -32,7 +32,7 @@ Please send us your map if it's not already published! Link to [Reddit](<https:/
 <hr>
 
 <div align="center">
-<a href="https://github.com/zebscripts/AFK-Daily/wiki/Home">Previous page</a>
+<a href="https://github.com/kevingrillet/AFKArena-LabHelper/wiki/Home">Previous page</a>
 |
-<a href="https://github.com/zebscripts/AFK-Daily/wiki/Get-Started">Next page</a>
+<a href="https://github.com/kevingrillet/AFKArena-LabHelper/wiki/Get-Started">Next page</a>
 </div>

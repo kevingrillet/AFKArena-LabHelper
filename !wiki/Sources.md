@@ -13,14 +13,19 @@
 ## Icons & Logo
 
 - <div>Icônes conçues par <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/fr/" title="Flaticon">www.flaticon.com</a></div>
-  - <https://www.flaticon.com/free-icon/reddit_889130>
-  - <https://www.flaticon.com/fr/icone-gratuite/logo-reddit_52053>
-  - <https://www.flaticon.com/fr/icone-gratuite/github_733609>
+
+  - Reddit: <https://www.flaticon.com/free-icon/reddit_889130>
+  - Logo Reddit: <https://www.flaticon.com/fr/icone-gratuite/logo-reddit_52053>
+  - Github: <https://www.flaticon.com/fr/icone-gratuite/github_733609>
+
+## Font
+
+- [Roboto](<https://fonts.google.com/specimen/Roboto>)
 
 <hr>
 
 <div align="center">
-<a href="https://github.com/zebscripts/AFK-Daily/wiki/Get-Started">Previous page</a>
+<a href="https://github.com/kevingrillet/AFKArena-LabHelper/wiki/Get-Started">Previous page</a>
 |
-<a href="https://github.com/zebscripts/AFK-Daily/wiki/Contribute">Next page</a>
+<a href="https://github.com/kevingrillet/AFKArena-LabHelper/wiki/Contribute">Next page</a>
 </div>
