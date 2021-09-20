@@ -269,8 +269,8 @@ span.white {
 
 .tags {
   position: absolute;
-  top: .1rem;
-  right: .1rem;
+  top: 1rem;
+  left: 1rem;
   display: block;
   text-align: left;
 }
