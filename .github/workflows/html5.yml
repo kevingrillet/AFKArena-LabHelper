@@ -10,4 +10,4 @@ jobs:
     - name: Checks HTML5
       uses: Cyb3r-Jak3/html5validator-action@v0.4.2
       with:
-        root: /
+        root: .
