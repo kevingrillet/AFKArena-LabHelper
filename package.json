@@ -1,0 +1,25 @@
+{
+  "name": "afkarena-labhelper",
+  "version": "1.0.0",
+  "description": "Little UI to draw the labyrinth.",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevingrillet/AFKArena-LabHelper.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kevingrillet/AFKArena-LabHelper/issues"
+  },
+  "homepage": "https://github.com/kevingrillet/AFKArena-LabHelper#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
+}
