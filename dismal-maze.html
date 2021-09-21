@@ -7,28 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFK Arena - Lab helper</title>
     <link rel="icon" type="image/ico" href="./images/favicon.ico" />
-    <link rel="stylesheet" href="./css/style-fonts.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style-dismalMaze.css">
+    <link rel="stylesheet" href="./css/style-colors.css" id="styleColor">
     <link rel="stylesheet" href="./css/style-github.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body id="DismalMaze">
     <a target="_blank" href="https://github.com/kevingrillet/AFKArena-LabHelper" class="github-corner"
-    aria-label="View source on GitHub">
-    <svg width="80" height="80" viewBox="0 0 250 250"
-        style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path
-            d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-            fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path
-            d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-            fill="currentColor" class="octo-body"></path>
-    </svg></a>
+        aria-label="View source on GitHub">
+        <svg width="80" height="80" viewBox="0 0 250 250"
+            style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
 
-    <a href="./index.html" aria-label="Return"><svg width="80" height="80"
-            viewBox="0 0 2048 2048"
+    <a href="./index.html" aria-label="Return"><svg width="80" height="80" viewBox="0 0 2048 2048"
             style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(1, 1);"
             aria-hidden="true">
             <path d="M0,0 L0,2048 L2048,0 Z"></path>
@@ -37,7 +40,9 @@
         </svg></a>
 
     <div>
-        <button id="btnLoad">Load</button><input id="fileInput" type="file" name="name" style="display: none;" accept=".txt" />
+        <img src="./images/logos/svg/lamp.svg" alt="Switch mode" id="Mode" title="Switch to day mode">
+        <button id="btnLoad">Load</button><input id="fileInput" type="file" name="name" style="display: none;"
+            accept=".txt" />
         <button id="btnSave" name="DismalMaze">Save</button>
         <button id="btnExport" name="LabPath-DismalMaze">Export as PNG</button>
     </div>
@@ -45,8 +50,11 @@
     <div id="LabPath">
         <h1 id="globTitle">Dismal Maze</h1>
         <div class="tags">
-            <a href="https://www.reddit.com/r/Lab_path/"><img style="fill: white" src="./images/logos/reddit.svg" alt="Logo Reddit"> R/LAB_PATH</a><br>
-            <a href="https://git.io/JzsWg"><img src="./images/logos/github.svg" alt="Logo Reddit"> https://git.io/JzsWg</a>
+            <a href="https://www.reddit.com/r/Lab_path/">
+                R/LAB_PATH</a><br>
+            <a href="https://git.io/LabPathHelper">
+                https://git.io/LabPathHelper
+            </a>
         </div>
         <div class="legend">
             <h2>Legend</h2>
@@ -70,12 +78,12 @@
                 draggable="true"><br>
             <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='red'></span
                 draggable="true"><span draggable="true" class='red'></span draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='lightbrown'></span
-                draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='lightbrown'></span draggable="true"><br>
             <span draggable="true" class='yellow'></span draggable="true"><span draggable="true" class='yellow'></span
                 draggable="true"><span draggable="true" class='yellow'></span draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='lightbrown'></span
-                draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='lightbrown'></span draggable="true"><br>
             <span draggable="true" class='lightblue'></span draggable="true"><span draggable="true" class='red'></span
                 draggable="true"><span draggable="true" class='lightbrown'></span draggable="true"><br>
             <span draggable="true" class='yellow'></span draggable="true"><span draggable="true" class='yellow'></span
@@ -94,20 +102,20 @@
                 draggable="true"><br>
             <span draggable="true" class='red'></span draggable="true"><span draggable="true" class='blue'></span
                 draggable="true"><span draggable="true" class='lightbrown'></span draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='lightbrown'></span
-                draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='lightbrown'></span draggable="true"><br>
             <span draggable="true" class='yellow'></span draggable="true"><span draggable="true" class='yellow'></span
                 draggable="true"><span draggable="true" class='yellow'></span draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='lightbrown'></span
-                draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='brown'></span
-                draggable="true"><span draggable="true" class='red'></span draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='lightbrown'></span draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='brown'></span draggable="true"><span draggable="true" class='red'></span draggable="true"><br>
             <span draggable="true" class='yellow'></span draggable="true"><span draggable="true" class='yellow'></span
                 draggable="true"><br>
             <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='red'></span
                 draggable="true"><span draggable="true" class='lightbrown'></span draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='lightblue'></span
-                draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='lightblue'></span draggable="true"><br>
             <span draggable="true" class='white'></span draggable="true"><br>
         </div>
 
@@ -122,16 +130,16 @@
                 draggable="true"><br>
             <span draggable="true" class='yellow'></span draggable="true"><span draggable="true" class='yellow'></span
                 draggable="true"><span draggable="true" class='yellow'></span draggable="true"><br>
-            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true" class='lightbrown'></span
-                draggable="true"><br>
+            <span draggable="true" class='lightbrown'></span draggable="true"><span draggable="true"
+                class='lightbrown'></span draggable="true"><br>
             <span draggable="true" class='lightblue'></span draggable="true"><span draggable="true" class='red'></span
                 draggable="true"><span draggable="true" class='lightblue'></span draggable="true"><br>
             <span draggable="true" class='yellow'></span draggable="true"><span draggable="true" class='yellow'></span
                 draggable="true"><br>
             <span draggable="true" class='red'></span draggable="true"><span draggable="true" class='lightblue'></span
                 draggable="true"><span draggable="true" class='red'></span draggable="true"><br>
-            <span draggable="true" class='brown'></span draggable="true"><span draggable="true" class='lightbrown'></span
-                draggable="true"><br>
+            <span draggable="true" class='brown'></span draggable="true"><span draggable="true"
+                class='lightbrown'></span draggable="true"><br>
             <span draggable="true" class='white'></span draggable="true"><br>
         </div>
 
@@ -139,9 +147,12 @@
             <div class="dismalLuck">
                 <h2>Dismal Luck</h2>
                 <ul>
-                    <li><img draggable="true" src="./images/dismalMaze/battle_endurance.png" alt="battle_endurance" title="Battle Endurance"></li>
-                    <li><img draggable="true" src="./images/dismalMaze/battle_spirit.png" alt="battle_spirit" title="Battle Spirit"></li>
-                    <li><img draggable="true" src="./images/dismalMaze/broken_spirit.png" alt="broken_spirit" title="Broken Spirit"></li>
+                    <li><img draggable="true" src="./images/dismalMaze/battle_endurance.png" alt="battle_endurance"
+                            title="Battle Endurance"></li>
+                    <li><img draggable="true" src="./images/dismalMaze/battle_spirit.png" alt="battle_spirit"
+                            title="Battle Spirit"></li>
+                    <li><img draggable="true" src="./images/dismalMaze/broken_spirit.png" alt="broken_spirit"
+                            title="Broken Spirit"></li>
                 </ul>
             </div>
             <div class="allowedFactions">
@@ -157,10 +168,12 @@
     </div>
 
     <p><i>Tiles can be swapped, use mouse left/right click on them to open menu to change them by hand. <br>
-    Mouse middle click on a tile to say that you don't know. Click on floor tile to say that you don't know for the entire floor.</i></p>
+            Mouse middle click on a tile to say that you don't know. Click on floor tile to say that you don't know for
+            the entire floor.</i></p>
 
     <br>
-    <a href="https://www.reddit.com/r/Lab_path/comments/fj1g4y/official_rlab_path_discord_server/" target="_blank">To get more info on the Lab_Path Discord Server, click here.</a>
+    <a href="https://www.reddit.com/r/Lab_path/comments/fj1g4y/official_rlab_path_discord_server/" target="_blank">To
+        get more info on the Lab_Path Discord Server, click here.</a>
 
     <div id="context-menu-floor">
         <div class="item" title="Or Boss"><span class='yellow'></span> Relic Guardian</div>
@@ -186,57 +199,178 @@
 
     <div id="context-menu-dismalLuck">
         <ul>
-            <li><div class="item"><img src="./images/dismalMaze/battle_endurance.png" alt="battle_endurance" title="Battle Endurance"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/battle_spirit.png" alt="battle_spirit" title="Battle Spirit"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/broken_spirit.png" alt="broken_spirit" title="Broken Spirit"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/conscripts_aussault.png" alt="conscripts_aussault" title="Conscripts Aussault"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/cursed_smog.png" alt="cursed_smog" title="Cursed Smog"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/demonic_ascent.png" alt="demonic_ascent" title="Demonic Ascent"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/demonic_defiance.png" alt="demonic_defiance" title="Demonic Defiance"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/demonic_retaliation.png" alt="demonic_retaliation" title="Demonic Retaliation"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/desert_ambush.png" alt="desert_ambush" title="Desert Ambush"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/devils_resurgence.png" alt="devils_resurgence" title="Devils Resurgence"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/dispirited.png" alt="dispirited" title="Dispirited"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/ephemeral_banishment.png" alt="ephemeral_banishment" title="Ephemeral Banishment"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/etheral_shield.png" alt="etheral_shield" title="Etheral Shield"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/evil_energies.png" alt="evil_energies" title="Evil Energies"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/evil_reborn.png" alt="evil_reborn" title="Evil Reborn"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/fatal_wound.png" alt="fatal_wound" title="Fatal Wound"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/fearful_calling.png" alt="fearful_calling" title="Fearful Calling"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/hemorrhage.png" alt="hemorrhage" title="Hemorrhage"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/heroes_lifeline.png" alt="heroes_lifeline" title="Heroes Lifeline"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/hubris.png" alt="hubris" title="Hubris"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/induced_nightmare.png" alt="induced_nightmare" title="Induced Nightmare"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/kiss_of_death.png" alt="kiss_of_death" title="Kiss Of Death"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/life_flash.png" alt="life_flash" title="Life Flash"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/malignant_hatred.png" alt="malignant_hatred" title="Malignant Hatred"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/outlaw.png" alt="outlaw" title="Outlaw"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/piercing_evil.png" alt="piercing_evil" title="Piercing Evil"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/reapers_touch.png" alt="reapers_touch" title="Reapers Touch"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/stalwart_guardian.png" alt="stalwart_guardian" title="Stalwart Guardian"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/survivors_will.png" alt="survivors_will" title="Survivors Will"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/thorny_armor.png" alt="thorny_armor" title="Thorny Armor"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/unassailable_evil.png" alt="unassailable_evil" title="Unassailable Evil"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/unfazed_force.png" alt="unfazed_force" title="Unfazed Force"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/unholy_resurgence.png" alt="unholy_resurgence" title="Unholy Resurgence"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/unrelenting_power.png" alt="unrelenting_power" title="Unrelenting Power"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/unyielding_savagery.png" alt="unyielding_savagery" title="Unyielding Savagery"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/unyielding_volition.png" alt="unyielding_volition" title="Unyielding Volition"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/vehemence.png" alt="vehemence" title="Vehemence"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/war_fervor.png" alt="war_fervor" title="War Fervor"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/warriors_spirit.png" alt="warriors_spirit" title="Warriors Spirit"></div></li>
-            <li><div class="item"><img src="./images/dismalMaze/will_of_vengeance.png" alt="will_of_vengeance" title="Will Of Vengeance"></div></li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/battle_endurance.png" alt="battle_endurance"
+                        title="Battle Endurance"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/battle_spirit.png" alt="battle_spirit"
+                        title="Battle Spirit"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/broken_spirit.png" alt="broken_spirit"
+                        title="Broken Spirit"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/conscripts_aussault.png" alt="conscripts_aussault"
+                        title="Conscripts Aussault"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/cursed_smog.png" alt="cursed_smog" title="Cursed Smog">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/demonic_ascent.png" alt="demonic_ascent"
+                        title="Demonic Ascent"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/demonic_defiance.png" alt="demonic_defiance"
+                        title="Demonic Defiance"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/demonic_retaliation.png" alt="demonic_retaliation"
+                        title="Demonic Retaliation"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/desert_ambush.png" alt="desert_ambush"
+                        title="Desert Ambush"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/devils_resurgence.png" alt="devils_resurgence"
+                        title="Devils Resurgence"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/dispirited.png" alt="dispirited" title="Dispirited">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/ephemeral_banishment.png" alt="ephemeral_banishment"
+                        title="Ephemeral Banishment"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/etheral_shield.png" alt="etheral_shield"
+                        title="Etheral Shield"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/evil_energies.png" alt="evil_energies"
+                        title="Evil Energies"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/evil_reborn.png" alt="evil_reborn" title="Evil Reborn">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/fatal_wound.png" alt="fatal_wound" title="Fatal Wound">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/fearful_calling.png" alt="fearful_calling"
+                        title="Fearful Calling"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/hemorrhage.png" alt="hemorrhage" title="Hemorrhage">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/heroes_lifeline.png" alt="heroes_lifeline"
+                        title="Heroes Lifeline"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/hubris.png" alt="hubris" title="Hubris"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/induced_nightmare.png" alt="induced_nightmare"
+                        title="Induced Nightmare"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/kiss_of_death.png" alt="kiss_of_death"
+                        title="Kiss Of Death"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/life_flash.png" alt="life_flash" title="Life Flash">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/malignant_hatred.png" alt="malignant_hatred"
+                        title="Malignant Hatred"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/outlaw.png" alt="outlaw" title="Outlaw"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/piercing_evil.png" alt="piercing_evil"
+                        title="Piercing Evil"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/reapers_touch.png" alt="reapers_touch"
+                        title="Reapers Touch"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/stalwart_guardian.png" alt="stalwart_guardian"
+                        title="Stalwart Guardian"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/survivors_will.png" alt="survivors_will"
+                        title="Survivors Will"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/thorny_armor.png" alt="thorny_armor"
+                        title="Thorny Armor"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/unassailable_evil.png" alt="unassailable_evil"
+                        title="Unassailable Evil"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/unfazed_force.png" alt="unfazed_force"
+                        title="Unfazed Force"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/unholy_resurgence.png" alt="unholy_resurgence"
+                        title="Unholy Resurgence"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/unrelenting_power.png" alt="unrelenting_power"
+                        title="Unrelenting Power"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/unyielding_savagery.png" alt="unyielding_savagery"
+                        title="Unyielding Savagery"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/unyielding_volition.png" alt="unyielding_volition"
+                        title="Unyielding Volition"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/vehemence.png" alt="vehemence" title="Vehemence"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/war_fervor.png" alt="war_fervor" title="War Fervor">
+                </div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/warriors_spirit.png" alt="warriors_spirit"
+                        title="Warriors Spirit"></div>
+            </li>
+            <li>
+                <div class="item"><img src="./images/dismalMaze/will_of_vengeance.png" alt="will_of_vengeance"
+                        title="Will Of Vengeance"></div>
+            </li>
         </ul>
     </div>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/script-dragdrop.js"></script>
+    <!-- Libs -->
     <script src="./js/FileSaver.js"></script>
-    <script src="./js/script-loadsave.js"></script>
     <!--<script src="./js/html2canvas.min.js"></script>-->
     <script src="./js/dom-to-image.js"></script>
-    <script src="./js/script-export.js"></script>
+
+    <!-- My scripts -->
+    <script src="./js/script-clicks.js"></script>
+    <script src="./js/script-color.js"></script>
     <script src="./js/script-date.js"></script>
+    <script src="./js/script-dragdrop.js"></script>
+    <script src="./js/script-export.js"></script>
+    <script src="./js/script-loadsave.js"></script>
 </body>
 
 </html>

@@ -14,5 +14,5 @@ d.setDate(d.getDate() - dateDiffInDays(_DATE_FIX, _DATE_TODAY) % 2);
 
 
 window.addEventListener("load", function () {
-    document.querySelector('#globTitle').innerHTML += " - " + d.toLocaleDateString();
+    document.querySelector("#globTitle").innerHTML += " - " + d.toLocaleDateString();
 });

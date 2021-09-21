@@ -1,0 +1,97 @@
+/* DARK MODE*/
+
+body {
+  background-color: #2e2b33;
+  color: #ddd;
+}
+
+a,
+a:hover {
+  color: lightsteelblue;
+}
+
+button {
+  background-color: #ddd;
+  color: #222;
+}
+
+button:hover {
+  background-color: #bbb;
+}
+
+#context-menu-floor .item,
+#context-menu-allowedFactions .item,
+#context-menu-dismalLuck .item {
+  color: #eee;
+}
+
+#LabPath svg {
+  fill: #eee;
+}
+
+.legend li {
+  color: #eee;
+}
+
+span.yellow {
+  background-color: #FFFF66;
+}
+
+span.black {
+  background-color: dimgray;
+}
+
+span.purple {
+  background-color: Plum;
+}
+
+span.red {
+  background-color: tomato;
+}
+
+span.lightbrown {
+  background-color: tan;
+}
+
+span.brown {
+  background-color: peru;
+}
+
+span.blue {
+  background-color: cornflowerblue;
+}
+
+span.lightblue {
+  background-color: LightSkyBlue;
+}
+
+span.orange {
+  background-color: lightsalmon;
+}
+
+span.pink {
+  background-color: hotpink;
+}
+
+span.white {
+  background-color: #eee;
+}
+
+span.yellow,
+span.purple,
+span.red,
+span.lightbrown,
+span.lightblue,
+span.orange,
+span.pink,
+span.white {
+  color: #111;
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+span.black,
+span.brown,
+span.blue {
+  color: #eee;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
