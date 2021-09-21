@@ -3,6 +3,9 @@ name: Links
 on:
   push:
   pull_request:
+    paths:
+      - '.wiki/**'
+      - 'README.md'
   schedule:
     - cron:  '0 0 * * SUN'
 
