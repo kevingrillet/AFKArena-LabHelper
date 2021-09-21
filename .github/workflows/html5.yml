@@ -16,5 +16,6 @@ jobs:
     - name: Checks HTML5
       uses: Cyb3r-Jak3/html5validator-action@v0.6.1
       with:
+        root: .
         Log_Level: INFO
         css: true
