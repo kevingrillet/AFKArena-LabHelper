@@ -21,5 +21,11 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.3.2"
   }
 }
