@@ -59,7 +59,7 @@ span {
 
 #LabPath {
   display: inline-block;
-  max-width: 81rem;
+  max-width: 83rem;
 }
 
 #context-menu-allowedFactions,
@@ -82,8 +82,7 @@ span {
   transition: transform 200ms ease-in-out;
 }
 
-#context-menu-floor span,
-.legend span {
+#context-menu-floor span {
   height: 2rem;
   width: 2rem;
 }
@@ -206,7 +205,7 @@ span {
 
 .legend {
   border: 1px solid #222;
-  bottom: 7rem;
+  bottom: 3rem;
   display: inline-block;
   font-size: 1rem;
   margin: .5rem auto;
@@ -214,8 +213,7 @@ span {
   margin-right: 2rem;
   position: relative;
   text-align: left;
-  /*transform: translateY(-50%);*/
-  width: 15rem;
+  width: 17rem;
 }
 
 .legend h2 {
@@ -225,8 +223,13 @@ span {
 .legend li {
   border-radius: inherit;
   cursor: pointer;
-  font-size: .9rem;
+  /*font-size: .9rem;*/
   padding: .5rem;
+}
+
+.legend span {
+  height: 3rem;
+  width: 3rem;
 }
 
 .legend ul {
