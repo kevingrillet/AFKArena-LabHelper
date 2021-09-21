@@ -19,13 +19,12 @@ function switchMode() {
     let sc = document.querySelector("#styleColor");
     let ic = document.querySelector("#Mode");
     if (sc.getAttribute("href") == _STYLE_FILES[0]) {
-        ic.setAttribute("title", "Switch To night mode");
+        ic.setAttribute("title", "Switch to night mode");
         sc.setAttribute("href", _STYLE_FILES[1]);
         document.querySelector('.fa-sun').style.display = "none";
         document.querySelector('.fa-moon').style.display = "inline";
     }
     else {
-        console.log('else');
         ic.setAttribute("title", "Switch to day mode");
         sc.setAttribute("href", _STYLE_FILES[0]);
         document.querySelector('.fa-sun').style.display = "inline";
