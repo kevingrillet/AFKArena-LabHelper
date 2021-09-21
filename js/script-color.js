@@ -1,5 +1,4 @@
 const _STYLE_FILES = ["./css/style-colors.css", "./css/style-colors-light.css"];
-const _LAMP_SVG = ["./images/logos/svg/lamp.svg", "./images/logos/svg/lamp_on.svg"]
 
 /*
 const _SVG_GRAPHICS = ["path", "circle"]
@@ -21,13 +20,16 @@ function switchMode() {
     let ic = document.querySelector("#Mode");
     if (sc.getAttribute("href") == _STYLE_FILES[0]) {
         ic.setAttribute("title", "Switch To night mode");
-        ic.setAttribute("src", _LAMP_SVG[1])
         sc.setAttribute("href", _STYLE_FILES[1]);
+        document.querySelector('.fa-sun').style.display = "none";
+        document.querySelector('.fa-moon').style.display = "inline";
     }
     else {
+        console.log('else');
         ic.setAttribute("title", "Switch to day mode");
-        ic.setAttribute("src", _LAMP_SVG[0])
         sc.setAttribute("href", _STYLE_FILES[0]);
+        document.querySelector('.fa-sun').style.display = "inline";
+        document.querySelector('.fa-moon').style.display = "none";
     }
 }
 

@@ -40,7 +40,10 @@
         </svg></a>
 
     <div>
-        <img src="./images/logos/svg/lamp.svg" alt="Switch mode" id="Mode" title="Switch to day mode">
+        <div id="Mode" title="Switch to day mode">
+            <i style="font-size: 2rem;" class="fas fa-sun"></i>
+            <i style="font-size: 2rem; display: none;" class="fas fa-moon"></i>
+        </div>
         <button id="btnLoad">Load</button><input id="fileInput" type="file" name="name" style="display: none;"
             accept=".txt" />
         <button id="btnSave" name="ArcaneLabyrinth">Save</button>
@@ -51,8 +54,10 @@
         <h1 id="globTitle">Arcane Labyrinth</h1>
         <div class="tags">
             <a href="https://www.reddit.com/r/Lab_path/">
+                <i style="font-size: 1.5rem; vertical-align: middle;" class="fab fa-reddit-alien "></i>
                 R/LAB_PATH</a><br>
             <a href="https://git.io/LabPathHelper">
+                <i style="font-size: 1.5rem; vertical-align: middle;" class="fab fa-github-alt iSize"></i>
                 https://git.io/LabPathHelper
             </a>
         </div>
@@ -191,6 +196,7 @@
     <script src="./js/FileSaver.js"></script>
     <!--<script src="./js/html2canvas.min.js"></script>-->
     <script src="./js/dom-to-image.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
 
     <!-- My scripts -->
     <script src="./js/script-clicks.js"></script>

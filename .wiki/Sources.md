@@ -12,10 +12,15 @@
 
 ## Icons & Logo
 
-- <div>Icônes conçues par <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/fr/" title="Flaticon">www.flaticon.com</a></div>
-
-  - Lamp: <https://www.flaticon.com/free-icon/lamp_2910891>
-  - Lamp (on): <https://www.flaticon.com/free-icon/lamp_2910890>
+- Tags
+  - Reddit: <https://fontawesome.com/v5.15/icons/reddit-alien?style=brands>
+  - GitHub: <https://fontawesome.com/v5.15/icons/github-alt?style=brands>
+- Toogle light
+  - Sun: <https://fontawesome.com/v5.15/icons/sun?style=solid>
+  - Moon: <https://fontawesome.com/v5.15/icons/moon?style=solid>
+- Toogle text
+  - Book: <https://fontawesome.com/v5.15/icons/book?style=solid>
+  - Phone: <https://fontawesome.com/v5.15/icons/mobile?style=solid>
 
 ## Font
 

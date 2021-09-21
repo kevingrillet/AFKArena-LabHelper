@@ -158,8 +158,8 @@ span {
 }
 
 #Mode {
-  height: 1.75rem;
   vertical-align: middle;
+  display: inline-block;
 }
 
 .allowedFactions ul {
