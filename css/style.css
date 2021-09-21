@@ -157,7 +157,7 @@ span {
   position: relative;
 }
 
-#Mode {
+#Mode, #Words {
   vertical-align: middle;
   display: inline-block;
 }
