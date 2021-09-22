@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Little UI to draw the labyrinth.",
   "scripts": {
+    "pretty": "prettier --write .",
     "lint": "eslint -c .eslintrc.json ."
   },
   "repository": {
@@ -20,7 +21,8 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0"
+    "eslint-plugin-promise": "^5.1.0",
+    "prettier": "2.4.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

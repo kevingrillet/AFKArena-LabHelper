@@ -5,6 +5,7 @@
 *.code-workspace
 
 # Project specific
+node_modules
 *.in
 *.out
 *.tmp

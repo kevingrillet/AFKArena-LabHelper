@@ -1,0 +1,7 @@
+# Ignore artifacts:
+!old_sh
+.github
+.vscode
+js/vendor
+node_modules
+*.json
