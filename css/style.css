@@ -25,7 +25,7 @@ button {
 }
 
 div.floor:last-of-type {
-  border-left: 1px solid #111;
+  border-left: 1px solid;
 }
 
 h1 {
@@ -44,17 +44,36 @@ p {
 
 span {
   box-sizing: border-box;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   cursor: pointer;
   display: inline-block;
   font-size: 3rem;
   height: 4rem;
   line-height: 4rem;
-  margin: -.4rem .1rem;
+  margin: -.2rem .4rem;
   position: relative;
   vertical-align: middle;
   width: 4rem;
+  z-index: 1;
+}
+
+span::after,
+span::before {
+  box-sizing: border-box;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+span::before {
+  transform: scale(1.1);
+  filter: brightness(1.75);
 }
 
 #LabPath {
@@ -65,13 +84,12 @@ span {
 #context-menu-allowedFactions,
 #context-menu-dismalLuck,
 #context-menu-floor {
-  background: rgb( 27, 26, 26, .75);
   border-radius: .5rem;
   position: fixed;
   text-align: left;
   transform: scale(0);
   transform-origin: top left;
-  width: 14rem;
+  width: 15rem;
   z-index: 10000;
 }
 
@@ -94,11 +112,6 @@ span {
   border-radius: inherit;
   font-size: .9rem;
   padding: .5rem;
-}
-
-#context-menu-allowedFactions .item:hover,
-#context-menu-floor .item:hover {
-  background: rgb( 27, 26, 26, .9);
 }
 
 #context-menu-dismalLuck {
@@ -156,7 +169,8 @@ span {
   position: relative;
 }
 
-#Mode, #Words {
+#Mode,
+#Words {
   vertical-align: middle;
   display: inline-block;
 }
@@ -204,7 +218,7 @@ span {
 }
 
 .legend {
-  border: 1px solid #222;
+  border: 1px solid;
   bottom: 3rem;
   display: inline-block;
   font-size: 1rem;

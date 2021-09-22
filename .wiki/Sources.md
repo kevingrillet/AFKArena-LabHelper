@@ -9,6 +9,7 @@
 - Drag & Drop Swap Items: <https://developer.mozilla.org/fr/docs/Web/API/Document/drag_event>
 - Custom right-click menu to change item: <https://itnext.io/how-to-create-a-custom-right-click-menu-with-javascript-9c368bb58724>
 - Text output? Need to see where it will be used :) <https://github.com/eligrey/FileSaver.js>
+- Fix tiles drag & drop + border: <https://codepen.io/gzuzkstro/pen/ebdxZQ>
 
 ## Icons & Logo
 

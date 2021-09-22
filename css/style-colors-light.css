@@ -19,10 +19,31 @@ button:hover {
   background-color: #555;
 }
 
+div.floor:last-of-type,
+.legend {
+  border-color: #aaa;
+}
+
+span::before {
+  background-color: #111;
+  filter: brightness(.5);
+}
+
+#context-menu-allowedFactions,
+#context-menu-dismalLuck,
+#context-menu-floor {
+  background: rgb( 26, 26, 26, .75);
+}
+
 #context-menu-floor .item,
 #context-menu-allowedFactions .item,
 #context-menu-dismalLuck .item {
-  color: #222;
+  color: #eee;
+}
+
+#context-menu-allowedFactions .item:hover,
+#context-menu-floor .item:hover {
+  background: rgb( 26, 26, 26, .75);
 }
 
 #LabPath svg {
@@ -33,47 +54,58 @@ button:hover {
   color: #222;
 }
 
-span.yellow {
+span.yellow::after,
+span.yellow::before {
   background-color: #FFFF66;
 }
 
-span.black {
+span.black::after,
+span.black::before {
   background-color: dimgray;
 }
 
-span.purple {
+span.purple::after,
+span.purple::before {
   background-color: Plum;
 }
 
-span.red {
+span.red::after,
+span.red::before {
   background-color: tomato;
 }
 
-span.lightbrown {
+span.lightbrown::after,
+span.lightbrown::before {
   background-color: tan;
 }
 
-span.brown {
+span.brown::after,
+span.brown::before {
   background-color: peru;
 }
 
-span.blue {
+span.blue::after,
+span.blue::before {
   background-color: cornflowerblue;
 }
 
-span.lightblue {
+span.lightblue::after,
+span.lightblue::before {
   background-color: LightSkyBlue;
 }
 
-span.orange {
+span.orange::after,
+span.orange::before {
   background-color: lightsalmon;
 }
 
-span.pink {
+span.pink::after,
+span.pink::before {
   background-color: hotpink;
 }
 
-span.white {
+span.white::after,
+span.white::before {
   background-color: #eee;
 }
 
