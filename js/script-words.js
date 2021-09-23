@@ -1,3 +1,14 @@
+function getCookie (name) {
+  const cookieArr = document.cookie.split(';')
+  for (let i = 0; i < cookieArr.length; i++) {
+    const cookiePair = cookieArr[i].split('=')
+    if (name === cookiePair[0].trim()) {
+      return decodeURIComponent(cookiePair[1])
+    }
+  }
+  return null
+}
+
 function switchWords () {
   const ic = document.querySelector('#Words')
   const bd = ic.querySelector('.fa-book')
@@ -28,6 +39,7 @@ function switchWords () {
       l.querySelector('.pink').parentElement.lastChild.nodeValue = ' Hero res'
       c.querySelector('.pink').parentElement.lastChild.nodeValue = ' Hero res'
     }
+    document.cookie = 'words=zeb'
   } else {
     ic.setAttribute('title', 'Switch to @Zeb names')
     bd.style.display = 'inline'
@@ -52,9 +64,16 @@ function switchWords () {
       l.querySelector('.pink').parentElement.lastChild.nodeValue = ' Mystic'
       c.querySelector('.pink').parentElement.lastChild.nodeValue = ' Mystic'
     }
+    document.cookie = 'words=game'
   }
 }
 
 window.addEventListener('load', function () {
-  document.querySelector('#Words').onclick = switchWords
+  const i = document.querySelector('#Words')
+  i.onclick = switchWords
+  switch (getCookie('words')) {
+    case 'zeb':
+      i.click()
+      break
+  }
 })
