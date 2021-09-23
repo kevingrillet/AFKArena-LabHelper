@@ -49,7 +49,7 @@ span {
   font-size: 3rem;
   height: 4rem;
   line-height: 4rem;
-  margin: -.2rem .4rem;
+  margin: -.35rem .175rem;
   position: relative;
   vertical-align: middle;
   width: 4rem;
@@ -72,8 +72,7 @@ span::before {
 }
 
 span::before {
-  transform: scale(1.1);
-  filter: brightness(1.75);
+  transform: scale(1.05);
 }
 
 #LabPath {

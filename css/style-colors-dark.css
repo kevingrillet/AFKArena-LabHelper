@@ -26,7 +26,8 @@ div.floor:last-of-type,
 
 span::before {
   background-color: #eee;
-  filter: brightness(1.5);
+  /*filter: brightness(1.5);*/
+  opacity: 0;
 }
 
 #context-menu-allowedFactions,

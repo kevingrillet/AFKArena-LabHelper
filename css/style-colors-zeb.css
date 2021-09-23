@@ -1,0 +1,117 @@
+/* Light MODE*/
+
+body {
+  background-color: white;
+  color: #333;
+}
+
+a,
+a:hover {
+  color: deepskyblue;
+}
+
+button {
+  background-color: #333;
+  color: #eee;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+div.floor:last-of-type,
+.legend {
+  border-color: #aaa;
+}
+
+span::before {
+  background-color: #000000;
+}
+
+#context-menu-allowedFactions,
+#context-menu-dismalLuck,
+#context-menu-floor {
+  background: rgb( 26, 26, 26, .75);
+}
+
+#context-menu-floor .item,
+#context-menu-allowedFactions .item,
+#context-menu-dismalLuck .item {
+  color: #eee;
+}
+
+#context-menu-allowedFactions .item:hover,
+#context-menu-floor .item:hover {
+  background: rgb( 26, 26, 26, .75);
+}
+
+#LabPath svg {
+  fill: #222;
+}
+
+.legend li {
+  color: #222;
+}
+
+span.yellow::after {
+  background-color: #FEC80A;
+}
+
+span.black::after {
+  background-color: #000000;
+}
+
+span.purple::after {
+  background-color: #845CEC;
+}
+
+span.red::after {
+  background-color: #F01B20;
+}
+
+span.lightbrown::after {
+  background-color: #C9A7A7;
+}
+
+span.brown::after {
+  background-color: #654321;
+}
+
+span.blue::after {
+  background-color: #212E8E;
+}
+
+span.lightblue::after {
+  background-color: #99D7EA;
+}
+
+span.orange::after {
+  background-color: #F26F29;
+}
+
+span.pink::after {
+  background-color: #FE3CBE;
+}
+
+span.white::after {
+  background-color: #FFFFFF;
+}
+
+span.yellow,
+span.purple,
+span.red,
+span.lightbrown,
+span.lightblue,
+span.orange,
+span.pink,
+span.white {
+  color: #111;
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+span.black,
+span.brown,
+span.blue {
+  color: #eee;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}

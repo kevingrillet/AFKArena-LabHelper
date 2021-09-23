@@ -1,7 +1,7 @@
 function switchWords () {
   const ic = document.querySelector('#Words')
-  const bd = document.querySelector('.fa-book')
-  const md = document.querySelector('.fa-mobile')
+  const bd = ic.querySelector('.fa-book')
+  const md = ic.querySelector('.fa-mobile')
   const l = document.querySelector('.legend')
   const c = document.querySelector('#context-menu-floor')
   if (md.style.display === 'none') {
