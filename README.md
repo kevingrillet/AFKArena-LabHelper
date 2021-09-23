@@ -7,7 +7,7 @@
       <a href="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/wiki.yml"><img src="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/wiki.yml/badge.svg" /></a>
       <a href="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/links.yml"><img src="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/links.yml/badge.svg" /></a>
       <a href="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/html5.yml"><img src="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/html5.yml/badge.svg" /></a>
-      <a href="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/reviewdog.yml"><img src="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/reviewdog.yml/badge.svg" /></a>
+      <!-- <a href="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/reviewdog.yml"><img src="https://github.com/kevingrillet/AFKArena-LabHelper/actions/workflows/reviewdog.yml/badge.svg" /></a> -->
    </div>
 </div>
 
