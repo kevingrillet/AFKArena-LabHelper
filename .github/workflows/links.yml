@@ -3,12 +3,12 @@ name: Links
 on:
   push:
     paths:
-      - '.wiki/**'
-      - 'README.md'
+      - '**/*.html'
+      - '**/*.md'
   pull_request:
     paths:
-      - '.wiki/**'
-      - 'README.md'
+      - '**/*.html'
+      - '**/*.md'
   schedule:
     - cron:  '0 0 * * SUN'
 
@@ -21,7 +21,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.0.8
         with:
-          args: --verbose --no-progress **/*.md #**/*.html
+          args: --verbose --no-progress **/*.md **/*.html
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
