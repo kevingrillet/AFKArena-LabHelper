@@ -144,7 +144,7 @@ document.querySelector('#fileInput').onchange = function (file) {
           for (i; i < lines.length; i++) {
             if (lines[i] === '') { break }
             curTile = document.querySelectorAll(':scope .dismalLuck img')[curImage++]
-            curTile.src = './images/dismalMaze/' + lines[i] + '.png'
+            curTile.src = './images/dismalLuck/' + lines[i] + '.png'
             curTile.alt = lines[i]
             curTile.title = capitalizeTheFirstLetterOfEachWord(lines[i].replace('_', ' '))
           }
