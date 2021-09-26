@@ -22,12 +22,12 @@ Location: `item_icon/heirloom`
 
 ## Factions
 
-| Icon | Asset Name | InGame name |
-| :--: | :--------- | :---------- |
-|      |            | Celestial   |
-|      |            | Dimensional |
-|      |            | Graveborn   |
-|      |            | Hypogean    |
-|      |            | Lightbearer |
-|      |            | Mauler      |
-|      |            | Wilder      |
+| Icon                                                                                                                                             | Asset Name           | InGame name |
+| :----------------------------------------------------------------------------------------------------------------------------------------------: | :------------------- | :---------- |
+| ![icon_hero_cross.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_cross.png)   | icon_hero_cross.png  | Dimensional |
+| ![icon_hero_devil.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_devil.png)   | icon_hero_devil.png  | Hypogean    |
+| ![icon_hero_elf.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_elf.png)       | icon_hero_elf.png    | Wilder      |
+| ![icon_hero_god.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_god.png)       | icon_hero_god.png    | Celestial   |
+| ![icon_hero_human.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_human.png)   | icon_hero_human.png  | Lightbearer |
+| ![icon_hero_orc.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_orc.png)       | icon_hero_orc.png    | Mauler      |
+| ![icon_hero_undead.png](https://raw.githubusercontent.com/kevingrillet/AFKArena-LabHelper/main/!AssetMining/factions/Large/icon_hero_undead.png) | icon_hero_undead.png | Graveborn   |
