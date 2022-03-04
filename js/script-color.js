@@ -58,10 +58,10 @@ window.addEventListener('load', function () {
   const i = document.querySelector('#Mode')
   i.onclick = switchMode
   switch (getCookie('colors')) {
-    case 'zeb':
+    case 'light':
       i.click()
       // falls through
-    case 'light':
+    case 'dark':
       i.click()
       break
   }
