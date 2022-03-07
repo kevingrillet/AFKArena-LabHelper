@@ -72,7 +72,7 @@ window.addEventListener('load', function () {
   const i = document.querySelector('#Words')
   i.onclick = switchWords
   switch (getCookie('words')) {
-    case 'zeb':
+    case 'game':
       i.click()
       break
   }

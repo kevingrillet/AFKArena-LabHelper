@@ -8,7 +8,7 @@
     <title>AFK Arena - Lab helper</title>
     <link rel="icon" type="image/ico" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style-colors-zeb.css" id="styleColor">
+    <link rel="stylesheet" href="./css/style-colors-dark.css" id="styleColor">
     <link rel="stylesheet" href="./css/style-github.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,14 +40,14 @@
         </svg></a>
 
     <div>
-        <div id="Mode" title="Switch to night mode">
-            <i style="font-size: 2rem;" class="fas fa-moon"></i>
-            <i style="font-size: 2rem; display: none;" class="fas fa-sun"></i>
+        <div id="Mode" title="Switch to day mode">
+            <i style="font-size: 2rem; display: none;" class="fas fa-moon"></i>
+            <i style="font-size: 2rem;" class="fas fa-sun"></i>
             <i style="font-size: 2rem; display: none;" class="fas fa-book"></i>
         </div>
-        <div id="Words" title="Switch to game names">
-            <i style="font-size: 2rem; display: none;" class="fas fa-book"></i>
-            <i style="font-size: 2rem;" class="fas fa-mobile"></i>
+        <div id="Words" title="Switch to @Zeb Names">
+            <i style="font-size: 2rem;" class="fas fa-book"></i>
+            <i style="font-size: 2rem; display: none;" class="fas fa-mobile"></i>
         </div>
         <button id="btnLoad">Load</button><input id="fileInput" type="file" name="name" style="display: none;"
             accept=".txt" />
@@ -70,73 +70,89 @@
             <h2>Legend</h2>
             <ul>
                 <li><span class='yellow'></span> Boss</li>
-                <li><span class='black'></span> Wrizz</li>
-                <li><span class='red'></span> Red flag</li>
-                <li><span class='lightbrown'></span> Brown Flag</li>
+                <li><span class='black'></span> Cave of Treasures (Wrizz)</li>
+                <li><span class='red'></span> Praetorian Guard</li>
+                <li><span class='lightbrown'></span> Guard</li>
                 <li><span class='brown'></span> The Roamer</li>
                 <li title="Dark Wagon (Floor Hard)"><span class='blue'></span> Abandoned Wagon</li>
                 <li><span class='lightblue'></span> Fountain of Vitality</li>
-                <li><span class='pink'></span> Hero res</li>
+                <li><span class='pink'></span> Mystic</li>
             </ul>
         </div>
 
         <div class='floor'>
             <h2>Floor 1</h2>
             <span draggable="true" class='yellow'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='blue'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='pink'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='blue'></span><span
+                draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='lightbrown'></span><span
+                draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='red'></span><span
+                draggable="true" class='lightbrown'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='blue'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='blue'></span><span
+                draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='blue'></span><br>
             <span draggable="true" class='white'></span><br>
         </div>
 
         <div class='floor'>
             <h2>Floor 2</h2>
             <span draggable="true" class='yellow'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
+            <span draggable="true" class='pink'></span><span draggable="true" class='lightblue'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='blue'></span><span
+                draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='red'></span><span
+                draggable="true" class='lightbrown'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='blue'></span><span
+                draggable="true" class='brown'></span><br>
+            <span draggable="true" class='blue'></span><span draggable="true" class='lightblue'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='lightbrown'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='red'></span><br>
             <span draggable="true" class='white'></span><br>
         </div>
 
         <div class='floor'>
             <h2>Floor 3</h2>
             <span draggable="true" class='yellow'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true" class='red'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='pink'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='red'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='blue'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='pink'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='lightbrown'></span><br>
+            <span draggable="true" class='brown'></span><span draggable="true" class='lightblue'></span><br>
+            <span draggable="true" class='lightbrown'></span><span draggable="true" class='red'></span><span
+                draggable="true" class='lightbrown'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='pink'></span><br>
             <span draggable="true" class='white'></span><br>
         </div>
 
         <div class='floor'>
             <h2 title="Unlocks after 9-24">Floor Hard</h2>
             <span draggable="true" class='yellow'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true" class='red'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true" class='red'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
-            <span draggable="true" class='white'></span><span draggable="true" class='white'></span><br>
+            <span draggable="true" class='pink'></span><span draggable="true" class='lightblue'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='red'></span><br>
+            <span draggable="true" class='black'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='red'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='red'></span><br>
+            <span draggable="true" class='red'></span><span draggable="true" class='lightbrown'></span><span
+                draggable="true" class='lightbrown'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='brown'></span><br>
+            <span draggable="true" class='blue'></span><span draggable="true" class='red'></span><span draggable="true"
+                class='red'></span><br>
+            <span draggable="true" class='lightblue'></span><span draggable="true" class='pink'></span><br>
             <span draggable="true" class='white'></span><br>
         </div>
     </div>
@@ -151,13 +167,13 @@
 
     <div id="context-menu-floor">
         <div class="item"><span class='yellow'></span> Boss</div>
-        <div class="item"><span class='black'></span> Wrizz</div>
-        <div class="item"><span class='red'></span> Red flag</div>
-        <div class="item"><span class='lightbrown'></span> Brown flag</div>
+        <div class="item"><span class='black'></span> Cave of Treasures (Wrizz)</div>
+        <div class="item"><span class='red'></span> Praetorian Guard</div>
+        <div class="item"><span class='lightbrown'></span> Guard</div>
         <div class="item"><span class='brown'></span> The Roamer</div>
         <div class="item" title="Dark Wagon (Floor Hard)"><span class='blue'></span> Abandoned Wagon</div>
         <div class="item"><span class='lightblue'></span> Fountain of Vitality</div>
-        <div class="item"><span class='pink'></span> Hero res</div>
+        <div class="item"><span class='pink'></span> Mystic</div>
     </div>
 
     <!-- Libs -->
